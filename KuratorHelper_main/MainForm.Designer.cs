@@ -55,9 +55,11 @@
             this.guna2CustomGradientPanelАкадемы = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
+            this.guna2CustomGradientPanelСтуденты.SuspendLayout();
             this.guna2ContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -456,6 +458,7 @@
             // guna2CustomGradientPanelСтуденты
             // 
             this.guna2CustomGradientPanelСтуденты.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(34)))));
+            this.guna2CustomGradientPanelСтуденты.Controls.Add(this.guna2GradientPanel3);
             this.guna2CustomGradientPanelСтуденты.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CustomGradientPanelСтуденты.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(34)))));
             this.guna2CustomGradientPanelСтуденты.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(34)))));
@@ -544,6 +547,21 @@
             this.guna2ContainerControl1.TabIndex = 15;
             this.guna2ContainerControl1.Text = "guna2ContainerControl1";
             // 
+            // guna2GradientPanel3
+            // 
+            this.guna2GradientPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel3.BorderRadius = 15;
+            this.guna2GradientPanel3.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.guna2GradientPanel3.CustomizableEdges.BottomLeft = false;
+            this.guna2GradientPanel3.CustomizableEdges.BottomRight = false;
+            this.guna2GradientPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
+            this.guna2GradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
+            this.guna2GradientPanel3.Location = new System.Drawing.Point(417, 18);
+            this.guna2GradientPanel3.Margin = new System.Windows.Forms.Padding(6, 18, 6, 6);
+            this.guna2GradientPanel3.Name = "guna2GradientPanel3";
+            this.guna2GradientPanel3.Size = new System.Drawing.Size(788, 60);
+            this.guna2GradientPanel3.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -562,6 +580,7 @@
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2GradientPanel2.ResumeLayout(false);
+            this.guna2CustomGradientPanelСтуденты.ResumeLayout(false);
             this.guna2ContainerControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -594,6 +613,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
     }
 }
 
