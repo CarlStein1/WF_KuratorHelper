@@ -1,0 +1,12 @@
+﻿################################################################################
+# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
+################################################################################
+/KuratorHelper.sln
+/KuratorHelper_main/KuratorHelper_main.csproj
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.sln.docstates

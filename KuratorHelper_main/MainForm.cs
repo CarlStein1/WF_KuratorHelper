@@ -15,6 +15,11 @@ namespace KuratorHelper_main
     {
         Dictionary<Guna2TileButton, Guna2CustomGradientPanel> buttonsAndPanels = new Dictionary<Guna2TileButton, Guna2CustomGradientPanel>();
         Guna2TileButton currentbutton;
+        /* В ТАГ ТАБЛИЦ ВПИСАТЬ ЗАПРОС НА ВСТАВКУ ДАННЫХ В ЭТИ ТАБЛИЦЫ
+         * В ТАГ КНОПОК ВПИСАТЬ НАЗВАНИЕ ТАБЛИЦЫ В БД
+         * ДОБАВЛЕНИЕ И УДАЛЕНИЕ ЧЕРЕЗ КНОПКИ НА ПАНЕЛЕ СВЕРХУ
+         * ИЗМЕНЕНИЕ И ДРУГИЕ ФУНКЦИИ(ПО ТИПУ ОТПРАВКА СТУДЕНТА В АКАДЕМ) ЧЕРЕЗ КОНТЕКСТНОЕ МЕНЮ ПРИ НАЖАТИИ ПКМ
+         * НЕДЕЛИ РАСПИСАНИИ РЕАЛИЗОВАТЬ ЧЕРЕЗ 2 РАЗНЫЕ ТАБЛИЦЫ: ВЕРХНЯЯ И НИЖНЯЯ НЕДЕЛЯ*/
         public MainForm()
         {
             InitializeComponent();
@@ -49,6 +54,11 @@ namespace KuratorHelper_main
         private void guna2GradientPanel1_MouseMove(object sender, MouseEventArgs e)
         {
             guna2DragControl1.TargetControl = sender as Control;
+        }
+
+        private void guna2HScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            //guna2DataGridView1.scroll = guna2HScrollBar1;
         }
     }
 }
