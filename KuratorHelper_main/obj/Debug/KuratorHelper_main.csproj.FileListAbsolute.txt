@@ -24,3 +24,16 @@ F:\3 Курс\Шинакова С.В\Разработка кода ИС\Прак
 F:\3 Курс\Шинакова С.В\Разработка кода ИС\Практические работы\Курсовая работа\KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.AuthorizationForm.resources
 F:\3 Курс\Шинакова С.В\Разработка кода ИС\Практические работы\Курсовая работа\KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.csproj.SuggestedBindingRedirects.cache
 F:\3 Курс\Шинакова С.В\Разработка кода ИС\Практические работы\Курсовая работа\KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.csproj.CopyComplete
+C:\Users\Carl\Source\Repos\WF_KuratorHelper\KuratorHelper_main\bin\Debug\KuratorHelper_main.exe.config
+C:\Users\Carl\Source\Repos\WF_KuratorHelper\KuratorHelper_main\bin\Debug\KuratorHelper_main.exe
+C:\Users\Carl\Source\Repos\WF_KuratorHelper\KuratorHelper_main\bin\Debug\KuratorHelper_main.pdb
+C:\Users\Carl\Source\Repos\WF_KuratorHelper\KuratorHelper_main\bin\Debug\Guna.UI2.dll
+C:\Users\Carl\Source\Repos\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.csproj.AssemblyReference.cache
+C:\Users\Carl\Source\Repos\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.AuthorizationForm.resources
+C:\Users\Carl\Source\Repos\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.MainForm.resources
+C:\Users\Carl\Source\Repos\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.Properties.Resources.resources
+C:\Users\Carl\Source\Repos\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.csproj.GenerateResource.cache
+C:\Users\Carl\Source\Repos\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.csproj.CoreCompileInputs.cache
+C:\Users\Carl\Source\Repos\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorH.66A3949E.Up2Date
+C:\Users\Carl\Source\Repos\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.exe
+C:\Users\Carl\Source\Repos\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.pdb
