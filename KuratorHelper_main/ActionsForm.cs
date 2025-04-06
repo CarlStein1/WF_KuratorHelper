@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KuratorHelper_main
 {
-    public partial class Form1 : Form
+    public partial class ActionsForm : Form
     {
-        public Form1()
+        public ActionsForm()
         {
             InitializeComponent();
         }
