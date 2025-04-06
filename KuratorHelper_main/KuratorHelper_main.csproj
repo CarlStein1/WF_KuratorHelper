@@ -52,42 +52,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorizationForm.cs">
+    <Compile Include="Forms\AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AuthorizationForm.Designer.cs">
+    <Compile Include="Forms\AuthorizationForm.Designer.cs">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ActionsForm.cs">
+    <Compile Include="Forms\ActionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ActionsForm.Designer.cs">
+    <Compile Include="Forms\ActionsForm.Designer.cs">
       <DependentUpon>ActionsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MessageBoxCustom.cs">
+    <Compile Include="Forms\MessageBoxCustom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MessageBoxCustom.Designer.cs">
+    <Compile Include="Forms\MessageBoxCustom.Designer.cs">
       <DependentUpon>MessageBoxCustom.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AuthorizationForm.resx">
+    <EmbeddedResource Include="Forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ActionsForm.resx">
+    <EmbeddedResource Include="Forms\ActionsForm.resx">
       <DependentUpon>ActionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MessageBoxCustom.resx">
+    <EmbeddedResource Include="Forms\MessageBoxCustom.resx">
       <DependentUpon>MessageBoxCustom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
