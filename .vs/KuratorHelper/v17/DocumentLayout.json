@@ -1,13 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Carl\\source\\repos\\WF_KuratorHelper\\",
+  "WorkspaceRootPath": "F:\\3 \u041A\u0443\u0440\u0441\\\u0428\u0438\u043D\u0430\u043A\u043E\u0432\u0430 \u0421.\u0412\\\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u0434\u0430 \u0418\u0421\\\u041F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0440\u0430\u0431\u043E\u0442\u044B\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\WF_KuratorHelper\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5582A79A-1A7E-463E-B4F0-F69B9AADCB22}|KuratorHelper_main\\KuratorHelper_main.csproj|c:\\users\\carl\\source\\repos\\wf_kuratorhelper\\kuratorhelper_main\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5582A79A-1A7E-463E-B4F0-F69B9AADCB22}|KuratorHelper_main\\KuratorHelper_main.csproj|f:\\3 \u043A\u0443\u0440\u0441\\\u0448\u0438\u043D\u0430\u043A\u043E\u0432\u0430 \u0441.\u0432\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u0434\u0430 \u0438\u0441\\\u043F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0440\u0430\u0431\u043E\u0442\u044B\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\wf_kuratorhelper\\kuratorhelper_main\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5582A79A-1A7E-463E-B4F0-F69B9AADCB22}|KuratorHelper_main\\KuratorHelper_main.csproj|solutionrelative:kuratorhelper_main\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5582A79A-1A7E-463E-B4F0-F69B9AADCB22}|KuratorHelper_main\\KuratorHelper_main.csproj|f:\\3 \u043A\u0443\u0440\u0441\\\u0448\u0438\u043D\u0430\u043A\u043E\u0432\u0430 \u0441.\u0432\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u0434\u0430 \u0438\u0441\\\u043F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0440\u0430\u0431\u043E\u0442\u044B\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\wf_kuratorhelper\\kuratorhelper_main\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5582A79A-1A7E-463E-B4F0-F69B9AADCB22}|KuratorHelper_main\\KuratorHelper_main.csproj|solutionrelative:kuratorhelper_main\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5582A79A-1A7E-463E-B4F0-F69B9AADCB22}|KuratorHelper_main\\KuratorHelper_main.csproj|C:\\Users\\Carl\\source\\repos\\WF_KuratorHelper\\KuratorHelper_main\\MainForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5582A79A-1A7E-463E-B4F0-F69B9AADCB22}|KuratorHelper_main\\KuratorHelper_main.csproj|F:\\3 \u041A\u0443\u0440\u0441\\\u0428\u0438\u043D\u0430\u043A\u043E\u0432\u0430 \u0421.\u0412\\\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u0434\u0430 \u0418\u0421\\\u041F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0440\u0430\u0431\u043E\u0442\u044B\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\WF_KuratorHelper\\KuratorHelper_main\\MainForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5582A79A-1A7E-463E-B4F0-F69B9AADCB22}|KuratorHelper_main\\KuratorHelper_main.csproj|solutionrelative:KuratorHelper_main\\MainForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,11 +30,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "F:\\3 \u041A\u0443\u0440\u0441\\\u0428\u0438\u043D\u0430\u043A\u043E\u0432\u0430 \u0421.\u0412\\\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u0434\u0430 \u0418\u0421\\\u041F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0440\u0430\u0431\u043E\u0442\u044B\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\WF_KuratorHelper\\KuratorHelper_main\\Form1.cs",
+              "RelativeDocumentMoniker": "KuratorHelper_main\\Form1.cs",
+              "ToolTip": "F:\\3 \u041A\u0443\u0440\u0441\\\u0428\u0438\u043D\u0430\u043A\u043E\u0432\u0430 \u0421.\u0412\\\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u0434\u0430 \u0418\u0421\\\u041F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0440\u0430\u0431\u043E\u0442\u044B\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\WF_KuratorHelper\\KuratorHelper_main\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "KuratorHelper_main\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T18:15:21.267Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Users\\Carl\\source\\repos\\WF_KuratorHelper\\KuratorHelper_main\\MainForm.cs",
+              "DocumentMoniker": "F:\\3 \u041A\u0443\u0440\u0441\\\u0428\u0438\u043D\u0430\u043A\u043E\u0432\u0430 \u0421.\u0412\\\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u0434\u0430 \u0418\u0421\\\u041F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0440\u0430\u0431\u043E\u0442\u044B\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\WF_KuratorHelper\\KuratorHelper_main\\MainForm.cs",
               "RelativeDocumentMoniker": "KuratorHelper_main\\MainForm.cs",
-              "ToolTip": "C:\\Users\\Carl\\source\\repos\\WF_KuratorHelper\\KuratorHelper_main\\MainForm.cs",
+              "ToolTip": "F:\\3 \u041A\u0443\u0440\u0441\\\u0428\u0438\u043D\u0430\u043A\u043E\u0432\u0430 \u0421.\u0412\\\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u0434\u0430 \u0418\u0421\\\u041F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0440\u0430\u0431\u043E\u0442\u044B\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\WF_KuratorHelper\\KuratorHelper_main\\MainForm.cs",
               "RelativeToolTip": "KuratorHelper_main\\MainForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABrAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -39,11 +55,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\Carl\\source\\repos\\WF_KuratorHelper\\KuratorHelper_main\\MainForm.cs",
+              "DocumentMoniker": "F:\\3 \u041A\u0443\u0440\u0441\\\u0428\u0438\u043D\u0430\u043A\u043E\u0432\u0430 \u0421.\u0412\\\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u0434\u0430 \u0418\u0421\\\u041F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0440\u0430\u0431\u043E\u0442\u044B\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\WF_KuratorHelper\\KuratorHelper_main\\MainForm.cs",
               "RelativeDocumentMoniker": "KuratorHelper_main\\MainForm.cs",
-              "ToolTip": "C:\\Users\\Carl\\source\\repos\\WF_KuratorHelper\\KuratorHelper_main\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "ToolTip": "F:\\3 \u041A\u0443\u0440\u0441\\\u0428\u0438\u043D\u0430\u043A\u043E\u0432\u0430 \u0421.\u0412\\\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u0434\u0430 \u0418\u0421\\\u041F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0440\u0430\u0431\u043E\u0442\u044B\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\WF_KuratorHelper\\KuratorHelper_main\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "KuratorHelper_main\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-29T18:30:53.408Z",
