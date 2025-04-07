@@ -31,7 +31,7 @@ namespace KuratorHelper_main
                 { guna2TileButtonАдреса, guna2CustomGradientPanelАдреса},
                 { guna2TileButtonДокументы, guna2CustomGradientPanelДокументы }
             };
-            guna2DataGridView2.Rows.Add();
+            guna2DataGridView2.Rows.Add("Английский\nЛузина И.А");
         }
 
         private void MainForm_Load(object sender, EventArgs e)

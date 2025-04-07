@@ -90,7 +90,7 @@
             this.guna2ControlBox2.CustomClick = true;
             this.guna2ControlBox2.CustomIconSize = 20F;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2ControlBox2.Font = new System.Drawing.Font("Arkhip", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2ControlBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2ControlBox2.Location = new System.Drawing.Point(336, 0);
             this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(0);
@@ -117,7 +117,7 @@
             // 
             this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("BIPs", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Arkhip", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2HtmlLabel1.IsContextMenuEnabled = false;
             this.guna2HtmlLabel1.IsSelectionEnabled = false;

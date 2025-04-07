@@ -50,3 +50,5 @@ F:\3 Курс\Шинакова С.В\Разработка кода ИС\Прак
 F:\3 Курс\Шинакова С.В\Разработка кода ИС\Практические работы\Курсовая работа\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorH.66A3949E.Up2Date
 F:\3 Курс\Шинакова С.В\Разработка кода ИС\Практические работы\Курсовая работа\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.exe
 F:\3 Курс\Шинакова С.В\Разработка кода ИС\Практические работы\Курсовая работа\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.pdb
+F:\3 Курс\Шинакова С.В\Разработка кода ИС\Практические работы\Курсовая работа\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.ActionsForm.resources
+F:\3 Курс\Шинакова С.В\Разработка кода ИС\Практические работы\Курсовая работа\WF_KuratorHelper\KuratorHelper_main\obj\Debug\KuratorHelper_main.MessageBoxCustom.resources

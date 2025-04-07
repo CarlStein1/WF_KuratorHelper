@@ -37,8 +37,8 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ControlBox4 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2ControlBox4 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,7 @@
             // guna2DragControl1
             // 
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.guna2GradientPanel1;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // guna2TileButton1
@@ -73,8 +74,8 @@
             this.guna2TileButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2TileButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2TileButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.guna2TileButton1.Font = new System.Drawing.Font("Candara Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guna2TileButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
+            this.guna2TileButton1.Font = new System.Drawing.Font("Arkhip", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2TileButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2TileButton1.Location = new System.Drawing.Point(12, 219);
             this.guna2TileButton1.Name = "guna2TileButton1";
@@ -95,8 +96,8 @@
             this.guna2TileButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2TileButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2TileButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.guna2TileButton2.Font = new System.Drawing.Font("Candara Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guna2TileButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
+            this.guna2TileButton2.Font = new System.Drawing.Font("Arkhip", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2TileButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2TileButton2.Location = new System.Drawing.Point(405, 219);
             this.guna2TileButton2.Name = "guna2TileButton2";
@@ -124,8 +125,8 @@
             this.guna2GradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.Black;
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2GradientPanel1.Controls.Add(this.guna2ControlBox4);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
@@ -138,7 +139,7 @@
             // 
             this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Candara Light", 21.75F);
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Arkhip", 21.75F);
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2HtmlLabel1.IsContextMenuEnabled = false;
             this.guna2HtmlLabel1.IsSelectionEnabled = false;
@@ -151,25 +152,25 @@
             this.guna2HtmlLabel1.Text = "{Заголовок}";
             this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 10;
+            this.guna2Elipse1.TargetControl = this.guna2HtmlLabel2;
+            // 
             // guna2ControlBox4
             // 
             this.guna2ControlBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox4.BackColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox4.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox4.BorderRadius = 5;
-            this.guna2ControlBox4.BorderThickness = 1;
-            this.guna2ControlBox4.FillColor = System.Drawing.Color.SeaShell;
-            this.guna2ControlBox4.IconColor = System.Drawing.Color.Red;
-            this.guna2ControlBox4.Location = new System.Drawing.Point(441, 9);
-            this.guna2ControlBox4.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.guna2ControlBox4.CustomIconSize = 15F;
+            this.guna2ControlBox4.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox4.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.guna2ControlBox4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
+            this.guna2ControlBox4.Location = new System.Drawing.Point(438, 0);
+            this.guna2ControlBox4.Margin = new System.Windows.Forms.Padding(0);
             this.guna2ControlBox4.Name = "guna2ControlBox4";
-            this.guna2ControlBox4.Size = new System.Drawing.Size(30, 30);
-            this.guna2ControlBox4.TabIndex = 4;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 10;
-            this.guna2Elipse1.TargetControl = this.guna2HtmlLabel2;
+            this.guna2ControlBox4.Size = new System.Drawing.Size(42, 30);
+            this.guna2ControlBox4.TabIndex = 7;
             // 
             // MessageBoxCustom
             // 
@@ -199,7 +200,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox4;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox4;
     }
 }

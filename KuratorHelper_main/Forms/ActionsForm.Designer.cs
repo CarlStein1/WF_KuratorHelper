@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActionsForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActionsForm));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -49,6 +49,8 @@
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2DataGridViewЗаявки = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2TileButton11 = new Guna.UI2.WinForms.Guna2TileButton();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2GradientPanel4.SuspendLayout();
@@ -74,6 +76,7 @@
             // guna2DragControl1
             // 
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.guna2GradientPanel1;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // guna2GradientPanel1
@@ -145,7 +148,7 @@
             this.guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
             this.guna2ControlBox1.CustomIconSize = 15F;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2ControlBox1.Font = new System.Drawing.Font("Arkhip", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2ControlBox1.Location = new System.Drawing.Point(1403, 0);
             this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(0);
@@ -157,14 +160,14 @@
             // 
             this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Arkhip", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2HtmlLabel1.IsContextMenuEnabled = false;
             this.guna2HtmlLabel1.IsSelectionEnabled = false;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(70, 0);
             this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(30);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(340, 60);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(361, 60);
             this.guna2HtmlLabel1.TabIndex = 6;
             this.guna2HtmlLabel1.Text = "Выбор {сущность}";
             this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -178,7 +181,7 @@
             this.guna2ControlBox2.CustomClick = true;
             this.guna2ControlBox2.CustomIconSize = 20F;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2ControlBox2.Font = new System.Drawing.Font("Arkhip", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2ControlBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2ControlBox2.Location = new System.Drawing.Point(1361, 0);
             this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(0);
@@ -216,7 +219,7 @@
             this.guna2GradientPanel4.Location = new System.Drawing.Point(16, 148);
             this.guna2GradientPanel4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 6);
             this.guna2GradientPanel4.Name = "guna2GradientPanel4";
-            this.guna2GradientPanel4.Size = new System.Drawing.Size(1457, 600);
+            this.guna2GradientPanel4.Size = new System.Drawing.Size(1457, 538);
             this.guna2GradientPanel4.TabIndex = 8;
             // 
             // guna2GradientPanel5
@@ -233,7 +236,7 @@
             this.guna2GradientPanel5.Location = new System.Drawing.Point(12, 18);
             this.guna2GradientPanel5.Margin = new System.Windows.Forms.Padding(12, 0, 12, 12);
             this.guna2GradientPanel5.Name = "guna2GradientPanel5";
-            this.guna2GradientPanel5.Size = new System.Drawing.Size(1433, 570);
+            this.guna2GradientPanel5.Size = new System.Drawing.Size(1433, 508);
             this.guna2GradientPanel5.TabIndex = 2;
             // 
             // guna2DataGridViewЗаявки
@@ -253,7 +256,7 @@
             this.guna2DataGridViewЗаявки.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Arkhip", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(48)))), ((int)(((byte)(61)))));
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
@@ -297,7 +300,7 @@
             this.guna2DataGridViewЗаявки.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.guna2DataGridViewЗаявки.RowTemplate.DividerHeight = 2;
             this.guna2DataGridViewЗаявки.RowTemplate.Height = 36;
-            this.guna2DataGridViewЗаявки.Size = new System.Drawing.Size(1409, 546);
+            this.guna2DataGridViewЗаявки.Size = new System.Drawing.Size(1409, 484);
             this.guna2DataGridViewЗаявки.TabIndex = 1;
             this.guna2DataGridViewЗаявки.Tag = "applications";
             this.guna2DataGridViewЗаявки.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FloralWhite;
@@ -309,7 +312,7 @@
             this.guna2DataGridViewЗаявки.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.guna2DataGridViewЗаявки.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Bisque;
             this.guna2DataGridViewЗаявки.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.guna2DataGridViewЗаявки.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guna2DataGridViewЗаявки.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Arkhip", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2DataGridViewЗаявки.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridViewЗаявки.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.guna2DataGridViewЗаявки.ThemeStyle.HeaderStyle.Height = 48;
@@ -326,7 +329,7 @@
             // 
             this.guna2HtmlLabel3.AutoSize = false;
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Arkhip", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2HtmlLabel3.IsContextMenuEnabled = false;
             this.guna2HtmlLabel3.IsSelectionEnabled = false;
@@ -338,17 +341,63 @@
             this.guna2HtmlLabel3.Text = "Выберите {0} запись из {0} для {ФИО}";
             this.guna2HtmlLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form1
+            // guna2TileButton11
+            // 
+            this.guna2TileButton11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2TileButton11.Animated = true;
+            this.guna2TileButton11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TileButton11.BorderRadius = 15;
+            this.guna2TileButton11.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(204)))));
+            this.guna2TileButton11.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.guna2TileButton11.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2TileButton11.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton11.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2TileButton11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2TileButton11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
+            this.guna2TileButton11.Font = new System.Drawing.Font("Arkhip", 20.25F);
+            this.guna2TileButton11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
+            this.guna2TileButton11.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(127)))));
+            this.guna2TileButton11.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.guna2TileButton11.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2TileButton11.Location = new System.Drawing.Point(1073, 698);
+            this.guna2TileButton11.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.guna2TileButton11.Name = "guna2TileButton11";
+            this.guna2TileButton11.Size = new System.Drawing.Size(400, 50);
+            this.guna2TileButton11.TabIndex = 33;
+            this.guna2TileButton11.Tag = "academic";
+            this.guna2TileButton11.Text = "Отмена предыдущего";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.AutoSize = false;
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Arkhip", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
+            this.guna2HtmlLabel2.IsContextMenuEnabled = false;
+            this.guna2HtmlLabel2.IsSelectionEnabled = false;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(16, 698);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(16);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(1038, 50);
+            this.guna2HtmlLabel2.TabIndex = 34;
+            this.guna2HtmlLabel2.Text = "Предыдущий выбор: {Выбор}";
+            this.guna2HtmlLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ActionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(1488, 763);
+            this.Controls.Add(this.guna2HtmlLabel2);
+            this.Controls.Add(this.guna2TileButton11);
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.guna2GradientPanel4);
             this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ActionsForm";
             this.Text = "Form1";
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -375,5 +424,7 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel5;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridViewЗаявки;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2TileButton guna2TileButton11;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
     }
 }
