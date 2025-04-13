@@ -19,10 +19,18 @@ namespace KuratorHelper_main
 
         private void guna2TileButtonВыход_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainForm mnfrm = new MainForm();
-            mnfrm.FormClosed += (s, eargs) => this.Close();
-            mnfrm.Show();
+            var a = $"SELECT tutor_id, last_name, first_name, middle_name FROM teachers WHERE login = \"{guna2TextBox1.Text}\" AND password = \"{guna2TextBox2.Text}\"";
+            List<string[]> temp = VoidsMain.SelectRequestAsList($"SELECT tutor_id, last_name, first_name, middle_name FROM teachers WHERE login = \"{guna2TextBox1.Text}\" AND password = \"{guna2TextBox2.Text}\"");
+            if (temp.Count != 0)
+            {
+                this.Hide();
+                MainForm mnfrm = new MainForm();
+                mnfrm.kuratordata = temp[0];
+                mnfrm.FormClosed += (s, eargs) => this.Close();
+                mnfrm.Show();
+            }
+            else
+                VoidsMain.MessageBoxCustomShow("Ошибка", "Преподаватель не найден!");
         }
     }
 }

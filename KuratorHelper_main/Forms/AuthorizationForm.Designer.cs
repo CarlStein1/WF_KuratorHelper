@@ -69,7 +69,7 @@
             // 
             // guna2GradientPanel1
             // 
-            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Black;
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2GradientPanel1.Controls.Add(this.guna2ControlBox2);
             this.guna2GradientPanel1.Controls.Add(this.guna2ControlBox4);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -146,12 +146,12 @@
             this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(131)))), ((int)(((byte)(182)))));
             this.guna2TextBox1.FocusedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
-            this.guna2TextBox1.FocusedState.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.guna2TextBox1.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2TextBox1.Font = new System.Drawing.Font("Candara Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(131)))), ((int)(((byte)(182)))));
             this.guna2TextBox1.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
-            this.guna2TextBox1.HoverState.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.guna2TextBox1.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2TextBox1.Location = new System.Drawing.Point(118, 217);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(0, 15, 61, 15);
             this.guna2TextBox1.Name = "guna2TextBox1";
@@ -177,12 +177,12 @@
             this.guna2TextBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(131)))), ((int)(((byte)(182)))));
             this.guna2TextBox2.FocusedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
-            this.guna2TextBox2.FocusedState.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.guna2TextBox2.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2TextBox2.Font = new System.Drawing.Font("Candara Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2TextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(131)))), ((int)(((byte)(182)))));
             this.guna2TextBox2.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
-            this.guna2TextBox2.HoverState.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.guna2TextBox2.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2TextBox2.Location = new System.Drawing.Point(118, 285);
             this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(0, 5, 61, 0);
             this.guna2TextBox2.Name = "guna2TextBox2";
@@ -237,7 +237,7 @@
             this.guna2TileButtonВыход.Font = new System.Drawing.Font("Candara Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2TileButtonВыход.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2TileButtonВыход.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(127)))));
-            this.guna2TileButtonВыход.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.guna2TileButtonВыход.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2TileButtonВыход.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2TileButtonВыход.Location = new System.Drawing.Point(288, 353);
             this.guna2TileButtonВыход.Margin = new System.Windows.Forms.Padding(15, 20, 10, 0);

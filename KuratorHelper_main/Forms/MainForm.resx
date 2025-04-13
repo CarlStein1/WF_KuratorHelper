@@ -132,6 +132,13 @@
   <metadata name="dataGridViewTextBoxColumn5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Column27.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="guna2DataGridView3.Tag" xml:space="preserve">
+    <value>SELECT s.lesson_number, subject_name, CONCAT(t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') AS teacher, s.week, s.weekday FROM schedule s JOIN teachers t ON s.tutor_id = t.tutor_id WHERE s.group_name = '{0}' ORDER BY s.lesson_number, FIELD(s.weekday, 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ');
+</value>
+  </data>
   <metadata name="Column26.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -153,6 +160,10 @@
   <metadata name="Column20.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="guna2DataGridView2.Tag" xml:space="preserve">
+    <value>SELECT s.lesson_number AS 'Номер пары', MAX(CASE WHEN s.weekday = 'ПН' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'ПН', MAX(CASE WHEN s.weekday = 'ВТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'ВТ', MAX(CASE WHEN s.weekday = 'СР' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'СР', MAX(CASE WHEN s.weekday = 'ЧТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'ЧТ', MAX(CASE WHEN s.weekday = 'ПТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'ПТ', MAX(CASE WHEN s.weekday = 'СБ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'СБ' FROM schedule s JOIN teachers t ON s.tutor_id = t.tutor_id WHERE s.week = 'Верхняя' AND s.group_name = '{0}' GROUP BY s.lesson_number ORDER BY s.lesson_number;
+</value>
+  </data>
   <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -192,9 +203,6 @@
   <metadata name="Column25.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="dataGridViewTextBoxColumn7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="dataGridViewTextBoxColumn8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -207,6 +215,9 @@
   <metadata name="dataGridViewTextBoxColumn11.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="guna2DataGridView5.Tag" xml:space="preserve">
+    <value>SELECT address_id, city, street, house, apartment FROM addresses, students WHERE (group_name = '{0}' AND students.registered_address_id = addresses.address_id) OR (group_name = '{0}' AND students.actual_address_id = addresses.address_id)</value>
+  </data>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
