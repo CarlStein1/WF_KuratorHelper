@@ -13,7 +13,9 @@ namespace KuratorHelper_main
 {
     public partial class MainForm : Form
     {
-        Dictionary<Guna2TileButton, Guna2CustomGradientPanel> buttonsAndPanels = new Dictionary<Guna2TileButton, Guna2CustomGradientPanel>();
+        Dictionary<Guna2TileButton, Guna2CustomGradientPanel> buttonsAndMainPanels = new Dictionary<Guna2TileButton, Guna2CustomGradientPanel>();
+        Dictionary<Guna2CustomGradientPanel, Guna2GradientPanel> mainPanelsAndPanels = new Dictionary<Guna2CustomGradientPanel, Guna2GradientPanel>();
+        List<Guna2TileButton> schedulebuttons;
         Guna2TileButton currentbutton;
         internal string[] kuratordata;
 
@@ -27,14 +29,25 @@ namespace KuratorHelper_main
         {
             InitializeComponent();
 
-            buttonsAndPanels = new Dictionary<Guna2TileButton, Guna2CustomGradientPanel>{
+            buttonsAndMainPanels = new Dictionary<Guna2TileButton, Guna2CustomGradientPanel>{
                 { guna2TileButtonСтуденты, guna2CustomGradientPanelСтуденты},
                 { guna2TileButtonАкадемы, guna2CustomGradientPanelАкадемы},
                 { guna2TileButtonРасписание, guna2CustomGradientPanelРасписание},
                 { guna2TileButtonАдреса, guna2CustomGradientPanelАдреса},
                 { guna2TileButtonДокументы, guna2CustomGradientPanelДокументы }
             };
-            guna2DataGridView2.Rows.Add("Английский\nЛузина И.А");
+            mainPanelsAndPanels = new Dictionary<Guna2CustomGradientPanel, Guna2GradientPanel>{
+                { guna2CustomGradientPanelСтуденты, guna2GradientPanelСтуденты },
+                { guna2CustomGradientPanelАкадемы, guna2GradientPanelАкадемы },
+                { guna2CustomGradientPanelАдреса, guna2GradientPanelАдреса },
+                { guna2CustomGradientPanelДокументы, guna2GradientPanelДокументы }
+            };
+            schedulebuttons = new List<Guna2TileButton>
+            {
+                guna2TileButton10, guna2TileButton11
+            };
+
+            guna2DataGridViewРасписание2.Rows.Add("Английский\nЛузина И.А");
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -57,10 +70,9 @@ namespace KuratorHelper_main
         }
 
         // Обновление DGV из БД
-        private void UpdateDGVFromDB()
+        private void UpdateDGVFromDB(Guna2DataGridView dgv = null)
         {
-            Guna2DataGridView dgv;
-            foreach (Control ctrl1 in buttonsAndPanels[currentbutton].Controls)
+            foreach (Control ctrl1 in buttonsAndMainPanels[currentbutton].Controls)
             {
                 if (ctrl1 is Guna2GradientPanel)
                 {
@@ -72,10 +84,24 @@ namespace KuratorHelper_main
                             {
                                 if (ctrl3 is Guna2DataGridView)
                                 {
-                                    dgv = ctrl3 as Guna2DataGridView;
-                                    if (dgv.Tag != null)
-                                        dgv.Columns.Clear();
-                                        dgv.DataSource = VoidsMain.SelectRequestAsDataTable(string.Format(dgv.Tag.ToString(), guna2ComboBox1.SelectedItem?.ToString() ?? ""));
+                                    if (dgv != null)
+                                    {
+                                        if (!String.IsNullOrEmpty(dgv.Tag.ToString()))
+                                        {
+                                            dgv.Columns.Clear();
+                                            dgv.DataSource = VoidsMain.SelectRequestAsDataTable(string.Format(dgv.Tag.ToString(), guna2ComboBox1.SelectedItem?.ToString() ?? ""));
+                                        }
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        Guna2DataGridView currentdgv = ctrl3 as Guna2DataGridView;
+                                        if (!String.IsNullOrEmpty(currentdgv.Tag.ToString()))
+                                        {
+                                            currentdgv.Columns.Clear();
+                                            currentdgv.DataSource = VoidsMain.SelectRequestAsDataTable(string.Format(currentdgv.Tag.ToString(), guna2ComboBox1.SelectedItem?.ToString() ?? ""));
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -91,10 +117,10 @@ namespace KuratorHelper_main
             if (!gtb.Checked)
             {
                 currentbutton.Checked = false;
-                buttonsAndPanels[currentbutton].Visible = false;
+                buttonsAndMainPanels[currentbutton].Visible = false;
                 
                 (currentbutton = gtb).Checked = true;
-                buttonsAndPanels[gtb].Visible = true;
+                buttonsAndMainPanels[gtb].Visible = true;
             }
 
             UpdateDGVFromDB();
@@ -105,9 +131,57 @@ namespace KuratorHelper_main
             guna2DragControl1.TargetControl = sender as Control;
         }
 
-        private void guna2HScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        private void guna2TileButton10_Click_1(object sender, EventArgs e)
         {
-            //guna2DataGridView1.scroll = guna2HScrollBar1;
+            Guna2TileButton gtb = sender as Guna2TileButton;
+            
+            foreach (Guna2TileButton gunatb in schedulebuttons)
+                gunatb.Checked = false;
+            gtb.Checked = true;
+
+            if (gtb.Text == "Верхняя")
+                guna2DataGridViewРасписание2.Tag = "SELECT s.lesson_number AS 'Номер пары', MAX(CASE WHEN s.weekday = 'ПН' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', " +
+                    "LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'ПН', MAX(CASE WHEN s.weekday = 'ВТ' " +
+                    "THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'ВТ', " +
+                    "MAX(CASE WHEN s.weekday = 'СР' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
+                    "ELSE '' END) AS 'СР', MAX(CASE WHEN s.weekday = 'ЧТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
+                    "ELSE '' END) AS 'ЧТ', MAX(CASE WHEN s.weekday = 'ПТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
+                    "ELSE '' END) AS 'ПТ', MAX(CASE WHEN s.weekday = 'СБ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
+                    "ELSE '' END) AS 'СБ' FROM schedule s JOIN teachers t ON s.tutor_id = t.tutor_id WHERE s.week = 'Верхняя' AND s.group_name = '{0}' " +
+                    "GROUP BY s.lesson_number ORDER BY s.lesson_number;";
+            else
+                guna2DataGridViewРасписание2.Tag = "SELECT s.lesson_number AS 'Номер пары', MAX(CASE WHEN s.weekday = 'ПН' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', " +
+                    "LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'ПН', MAX(CASE WHEN s.weekday = 'ВТ' " +
+                    "THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'ВТ', " +
+                    "MAX(CASE WHEN s.weekday = 'СР' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
+                    "ELSE '' END) AS 'СР', MAX(CASE WHEN s.weekday = 'ЧТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
+                    "ELSE '' END) AS 'ЧТ', MAX(CASE WHEN s.weekday = 'ПТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
+                    "ELSE '' END) AS 'ПТ', MAX(CASE WHEN s.weekday = 'СБ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
+                    "ELSE '' END) AS 'СБ' FROM schedule s JOIN teachers t ON s.tutor_id = t.tutor_id WHERE s.week = 'Нижняя' AND s.group_name = '{0}' " +
+                    "GROUP BY s.lesson_number ORDER BY s.lesson_number;";
+            UpdateDGVFromDB(guna2DataGridViewРасписание2);
+        }
+
+        private void guna2DataGridViewСтуденты_SelectionChanged(object sender, EventArgs e)
+        {
+            if ((sender as Guna2DataGridView).SelectedRows.Count > 0)
+            {
+
+                foreach (Control ctrl1 in mainPanelsAndPanels[buttonsAndMainPanels[currentbutton]].Controls)
+                {
+                    if (ctrl1 is Guna2HtmlLabel)
+                    {
+                        if ((ctrl1 as Guna2HtmlLabel).Tag != null)
+                        {
+                            if ((ctrl1 as Guna2HtmlLabel).AccessibleDescription == null)
+                            {
+                                (ctrl1 as Guna2HtmlLabel).AccessibleDescription = "";
+                            }
+                            ctrl1.Text = ctrl1.AccessibleDescription.ToString() + " " + VoidsMain.SelectRequestAsList(string.Format(ctrl1.Tag.ToString(), (sender as DataGridView).SelectedRows[0].Cells[0].Value))[0][0];
+                        }
+                    }
+                }
+            }
         }
     }
 }
