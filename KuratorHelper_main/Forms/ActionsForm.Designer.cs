@@ -47,7 +47,7 @@
             this.guna2ControlBox4 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2DataGridViewЗаявки = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2DataGridViewЗаявки = new KuratorHelper_main.CustomGuna2DataGridView();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2TileButton11 = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -422,7 +422,7 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox4;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel5;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridViewЗаявки;
+        private KuratorHelper_main.CustomGuna2DataGridView guna2DataGridViewЗаявки;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2TileButton guna2TileButton11;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;

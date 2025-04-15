@@ -13,8 +13,10 @@ namespace KuratorHelper_main
 {
     public partial class MainForm : Form
     {
+        public const string connectionstring = "server=localhost;port=3306;database=kuratorhelper;user=root;"; // Строка подключения к базе данных MySQL
         Dictionary<Guna2TileButton, Guna2CustomGradientPanel> buttonsAndMainPanels = new Dictionary<Guna2TileButton, Guna2CustomGradientPanel>();
         Dictionary<Guna2CustomGradientPanel, Guna2GradientPanel> mainPanelsAndPanels = new Dictionary<Guna2CustomGradientPanel, Guna2GradientPanel>();
+        Dictionary<Guna2TileButton, List<CustomGuna2DataGridView>> buttonsAndDGV = new Dictionary<Guna2TileButton, List<CustomGuna2DataGridView>>();
         List<Guna2TileButton> schedulebuttons;
         Guna2TileButton currentbutton;
         internal string[] kuratordata;
@@ -42,6 +44,14 @@ namespace KuratorHelper_main
                 { guna2CustomGradientPanelАдреса, guna2GradientPanelАдреса },
                 { guna2CustomGradientPanelДокументы, guna2GradientPanelДокументы }
             };
+            buttonsAndDGV = new Dictionary<Guna2TileButton, List<CustomGuna2DataGridView>>
+            {
+                { guna2TileButtonСтуденты, new List<CustomGuna2DataGridView> { guna2DataGridViewСтуденты } },
+                { guna2TileButtonАкадемы, new List<CustomGuna2DataGridView> { guna2DataGridViewАкадемы } },
+                { guna2TileButtonРасписание, new List<CustomGuna2DataGridView> { guna2DataGridViewРасписание1, guna2DataGridViewРасписание2 } },
+                { guna2TileButtonАдреса, new List<CustomGuna2DataGridView> { guna2DataGridViewАдреса } },
+                { guna2TileButtonДокументы, new List<CustomGuna2DataGridView> { guna2DataGridViewДокументы } }
+            };
             schedulebuttons = new List<Guna2TileButton>
             {
                 guna2TileButton10, guna2TileButton11
@@ -52,7 +62,7 @@ namespace KuratorHelper_main
         {
             currentbutton = guna2TileButtonСтуденты;
 
-            List<string[]> temp = VoidsMain.SelectRequestAsList($"SELECT group_name FROM groups WHERE tutor_id = {kuratordata[0]}");
+            List<string[]> temp = VoidsMain.SelectRequestAsList($"SELECT group_name FROM groups WHERE tutor_id = {kuratordata[0]}", connectionstring);
             for (int i = 0; i < temp.Count; i++)
             {
                 guna2ComboBox1.Items.Add(temp[i][0]);
@@ -68,43 +78,22 @@ namespace KuratorHelper_main
         }
 
         // Обновление DGV из БД
-        private void UpdateDGVFromDB(CustomGuna2DataGridView dgv = null, string querry = null)
+        private void UpdateDGVFromDB(int numbers = -1)
         {
-            foreach (Control ctrl1 in buttonsAndMainPanels[currentbutton].Controls)
+            foreach (List<CustomGuna2DataGridView> list in buttonsAndDGV.Values)
             {
-                if (ctrl1 is Guna2GradientPanel)
+                if(numbers == -1)
                 {
-                    foreach (Control ctrl2 in ctrl1.Controls)
+                    foreach (CustomGuna2DataGridView dgv in buttonsAndDGV[currentbutton])
                     {
-                        if (ctrl2 is Guna2GradientPanel)
-                        {
-                            foreach (Control ctrl3 in ctrl2.Controls)
-                            {
-                                if (ctrl3 is CustomGuna2DataGridView)
-                                {
-                                    if (dgv != null)
-                                    {
-                                        if (!String.IsNullOrEmpty(dgv.Tag.ToString()))
-                                        {
-                                            dgv.Columns.Clear();
-                                            dgv.DataSource = VoidsMain.SelectRequestAsDataTable(string.Format(dgv.Tag.ToString(), guna2ComboBox1.SelectedItem?.ToString() ?? ""));
-                                        }
-                                        return;
-                                    }
-                                    else
-                                    {
-                                        CustomGuna2DataGridView currentdgv = ctrl3 as CustomGuna2DataGridView;
-                                        if (!String.IsNullOrEmpty(currentdgv.Tag.ToString()))
-                                        {
-                                            currentdgv.Columns.Clear();
-                                            currentdgv.DataSource = VoidsMain.SelectRequestAsDataTable(string.Format(currentdgv.Tag.ToString(), guna2ComboBox1.SelectedItem?.ToString() ?? ""));
-                                            currentdgv.Columns[0].ReadOnly = currentdgv.ReadOnlyForeignKey;
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        dgv.QuerySelect = string.Format(dgv.QuerySelect, guna2ComboBox1.SelectedItem?.ToString() ?? "");
+                        dgv.QuerySelectCommand.ExecuteQuerry(connectionstring);
                     }
+                }
+                else
+                {
+                    buttonsAndDGV[currentbutton][numbers].QuerySelect = string.Format(buttonsAndDGV[currentbutton][numbers].QuerySelect, guna2ComboBox1.SelectedItem?.ToString() ?? "");
+                    buttonsAndDGV[currentbutton][numbers].QuerySelectCommand.ExecuteQuerry(connectionstring);
                 }
             }
         }
@@ -120,7 +109,7 @@ namespace KuratorHelper_main
                 (currentbutton = gtb).Checked = true;
                 buttonsAndMainPanels[gtb].Visible = true;
             }
-
+            
             UpdateDGVFromDB();
         }
 
@@ -136,8 +125,8 @@ namespace KuratorHelper_main
             foreach (Guna2TileButton gunatb in schedulebuttons)
                 gunatb.Checked = false;
             gtb.Checked = true;
-            guna2DataGridViewРасписание2.Tag = gtb.Tag;
-            UpdateDGVFromDB(guna2DataGridViewРасписание2);
+            guna2DataGridViewРасписание2.QuerySelect = string.Format(gtb.Tag.ToString(), guna2ComboBox1.SelectedItem?.ToString() ?? "");
+            UpdateDGVFromDB(1);
         }
 
         private void guna2DataGridViewСтуденты_SelectionChanged(object sender, EventArgs e)
@@ -155,7 +144,7 @@ namespace KuratorHelper_main
                             {
                                 (ctrl1 as Guna2HtmlLabel).AccessibleDescription = "";
                             }
-                            ctrl1.Text = ctrl1.AccessibleDescription.ToString() + " " + VoidsMain.SelectRequestAsList(string.Format(ctrl1.Tag.ToString(), (sender as CustomGuna2DataGridView).SelectedRows[0].Cells[0].Value))[0][0];
+                            ctrl1.Text = ctrl1.AccessibleDescription.ToString() + " " + VoidsMain.SelectRequestAsList(string.Format(ctrl1.Tag.ToString(), (sender as CustomGuna2DataGridView).SelectedRows[0].Cells[0].Value), connectionstring)[0][0];
                         }
                     }
                 }
@@ -164,9 +153,9 @@ namespace KuratorHelper_main
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
-            //CustomGuna2DataGridView dgv = currentpanel.Controls.OfType<CustomGuna2DataGridView>().First();
+            CustomGuna2DataGridView dgv = buttonsAndDGV[currentbutton][0];
+            Guna2TextBox txb = sender as Guna2TextBox;
 
-            //Guna2TextBox txb = null;
             //Guna2ComboBox combobox = currentpanel.Controls.OfType<Guna2ComboBox>().FirstOrDefault();
 
             //// Определяем, откуда пришел вызов
@@ -180,32 +169,31 @@ namespace KuratorHelper_main
             //    txb = currentpanel.Controls.OfType<Guna2TextBox>().FirstOrDefault();
             //}
 
-            //if (dgv.DataSource is DataTable table)
-            //{
-            //    string filterExpression = string.Empty;
+            if (dgv.DataSource is DataTable table)
+            {
+                string filterExpression = string.Empty;
 
-            //    // Фильтрация по текстовому полю
-            //    if (!string.IsNullOrEmpty(txb.Text))
-            //    {
-            //        foreach (DataColumn col in table.Columns)
-            //        {
+                // Фильтрация по текстовому полю
+                if (!string.IsNullOrEmpty(txb.Text))
+                {
+                    foreach (DataColumn col in table.Columns)
+                    {
+                        filterExpression += $"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{txb.Text}%' OR ";
+                    }
+                    filterExpression = filterExpression.TrimEnd(" OR ".ToCharArray());
+                }
 
-            //            filterExpression += $"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{txb.Text}%' OR ";
-            //        }
-            //        filterExpression = filterExpression.TrimEnd(" OR ".ToCharArray());
-            //    }
+                //// Фильтрация по ComboBox
+                //if (combobox != null && combobox.SelectedItem.ToString() != "Все")
+                //{
+                //    string comboboxTagTemp = VoidsMain.columnheadertexts[combobox.Tag.ToString()];
+                //    string comboFilter = $"[{comboboxTagTemp}] = '{combobox.SelectedItem}'";
+                //    filterExpression = string.IsNullOrEmpty(filterExpression) ? comboFilter : $"{comboFilter} AND ({filterExpression})";
+                //}
 
-            //    // Фильтрация по ComboBox
-            //    if (combobox != null && combobox.SelectedItem.ToString() != "Все")
-            //    {
-            //        string comboboxTagTemp = VoidsMain.columnheadertexts[combobox.Tag.ToString()];
-            //        string comboFilter = $"[{comboboxTagTemp}] = '{combobox.SelectedItem}'";
-            //        filterExpression = string.IsNullOrEmpty(filterExpression) ? comboFilter : $"{comboFilter} AND ({filterExpression})";
-            //    }
-
-            //    // Применение фильтрации
-            //    (table.DefaultView).RowFilter = filterExpression;
-            //}
+                // Применение фильтрации
+                (table.DefaultView).RowFilter = filterExpression;
+            }
         }
     }
 }

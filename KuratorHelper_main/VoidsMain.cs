@@ -14,13 +14,11 @@ namespace KuratorHelper_main
 {
     internal class VoidsMain
     {
-        // Строка подключения к базе данных MySQL
-        static string connectionstring = "server=localhost;port=3306;database=kuratorhelper;user=root;";
 
         // Словарь для записей названия колонок, для перевода с английского на русский
         public static Dictionary<string, string> columnheadertexts = new Dictionary<string, string>()
         {
-            { "student_id", "Зачетка" },
+            { "student_card", "Зачетка" },
             { "last_name", "Фамилия"},
             { "first_name", "Имя" },
             { "middle_name", "Отчество" },
@@ -51,7 +49,7 @@ namespace KuratorHelper_main
             { "military_status", "Воинский учет"},
 
             { "specialty", "Специальность"},
-            { "tutor_id", "id_преподавателя"},
+            { "teacher", "Учитель"},
 
             { "day_id", "id_дня"},
             { "lesson_number", "Номер пары"},
@@ -74,7 +72,7 @@ namespace KuratorHelper_main
         }
 
         // Выполнение SELECT-запроса и возврат результата в виде DataTable
-        public static DataTable SelectRequestAsDataTable(string request)
+        public static DataTable SelectRequestAsDataTable(string request, string connectionstring)
         {
             DataTable dataTable = new DataTable();
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
@@ -96,7 +94,7 @@ namespace KuratorHelper_main
         }
 
         // Выполнение SELECT-запроса и возврат результата в виде List<string[]>
-        public static List<string[]> SelectRequestAsList(string query)
+        public static List<string[]> SelectRequestAsList(string query, string connectionstring)
         {
             List<string[]> result = new List<string[]>();
 
@@ -124,7 +122,7 @@ namespace KuratorHelper_main
         }
 
         // Метод для выполнения INSERT, DELETE, UPDATE запросов
-        public static void InsDelUpdRequest(string request)
+        public static void InsDelUpdRequest(string request, string connectionstring)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
