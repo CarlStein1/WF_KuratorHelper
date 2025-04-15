@@ -68,7 +68,7 @@ namespace KuratorHelper_main
         }
 
         // Обновление DGV из БД
-        private void UpdateDGVFromDB(Guna2DataGridView dgv = null, string querry = null)
+        private void UpdateDGVFromDB(CustomGuna2DataGridView dgv = null, string querry = null)
         {
             foreach (Control ctrl1 in buttonsAndMainPanels[currentbutton].Controls)
             {
@@ -80,7 +80,7 @@ namespace KuratorHelper_main
                         {
                             foreach (Control ctrl3 in ctrl2.Controls)
                             {
-                                if (ctrl3 is Guna2DataGridView)
+                                if (ctrl3 is CustomGuna2DataGridView)
                                 {
                                     if (dgv != null)
                                     {
@@ -93,11 +93,12 @@ namespace KuratorHelper_main
                                     }
                                     else
                                     {
-                                        Guna2DataGridView currentdgv = ctrl3 as Guna2DataGridView;
+                                        CustomGuna2DataGridView currentdgv = ctrl3 as CustomGuna2DataGridView;
                                         if (!String.IsNullOrEmpty(currentdgv.Tag.ToString()))
                                         {
                                             currentdgv.Columns.Clear();
                                             currentdgv.DataSource = VoidsMain.SelectRequestAsDataTable(string.Format(currentdgv.Tag.ToString(), guna2ComboBox1.SelectedItem?.ToString() ?? ""));
+                                            currentdgv.Columns[0].ReadOnly = currentdgv.ReadOnlyForeignKey;
                                         }
                                     }
                                 }
@@ -141,7 +142,7 @@ namespace KuratorHelper_main
 
         private void guna2DataGridViewСтуденты_SelectionChanged(object sender, EventArgs e)
         {
-            if ((sender as Guna2DataGridView).SelectedRows.Count > 0)
+            if ((sender as CustomGuna2DataGridView).SelectedRows.Count > 0)
             {
 
                 foreach (Control ctrl1 in mainPanelsAndPanels[buttonsAndMainPanels[currentbutton]].Controls)
@@ -154,7 +155,7 @@ namespace KuratorHelper_main
                             {
                                 (ctrl1 as Guna2HtmlLabel).AccessibleDescription = "";
                             }
-                            ctrl1.Text = ctrl1.AccessibleDescription.ToString() + " " + VoidsMain.SelectRequestAsList(string.Format(ctrl1.Tag.ToString(), (sender as DataGridView).SelectedRows[0].Cells[0].Value))[0][0];
+                            ctrl1.Text = ctrl1.AccessibleDescription.ToString() + " " + VoidsMain.SelectRequestAsList(string.Format(ctrl1.Tag.ToString(), (sender as CustomGuna2DataGridView).SelectedRows[0].Cells[0].Value))[0][0];
                         }
                     }
                 }
@@ -163,7 +164,7 @@ namespace KuratorHelper_main
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
-            //Guna2DataGridView dgv = currentpanel.Controls.OfType<Guna2DataGridView>().First();
+            //CustomGuna2DataGridView dgv = currentpanel.Controls.OfType<CustomGuna2DataGridView>().First();
 
             //Guna2TextBox txb = null;
             //Guna2ComboBox combobox = currentpanel.Controls.OfType<Guna2ComboBox>().FirstOrDefault();

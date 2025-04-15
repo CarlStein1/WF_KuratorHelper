@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace KuratorHelper_main
 {
-    public class CustomDataGridView : Guna2DataGridView
+    public class CustomGuna2DataGridView : Guna2DataGridView
     {
+        [Category("Custom Props")]
         private string _QuerrySelect;
         private string _QuerryInsert;
         private string _QuerryUpdate;
         private bool _NeedActionForm;
         private bool _ReadOnlyForeignKey;
 
-        [Category("Custom Props")]
         public string QuerrySelect
         {
             get { return _QuerrySelect; }

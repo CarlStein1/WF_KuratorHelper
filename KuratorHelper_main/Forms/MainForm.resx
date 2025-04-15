@@ -120,190 +120,7 @@
   <metadata name="guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column27.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="guna2DataGridViewРасписание1.Tag" xml:space="preserve">
-    <value>SELECT s.lesson_number, subject_name, CONCAT(t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') AS teacher, s.week, s.weekday FROM schedule s JOIN teachers t ON s.tutor_id = t.tutor_id WHERE s.group_name = '{0}' ORDER BY s.lesson_number, FIELD(s.weekday, 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ');
-</value>
-  </data>
-  <data name="guna2TileButton11.Tag" xml:space="preserve">
-    <value>SELECT l.lesson_number AS '№', MAX(CASE WHEN s.weekday = 'ПН' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПН', MAX(CASE WHEN s.weekday = 'ВТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ВТ', MAX(CASE WHEN s.weekday = 'СР' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СР', MAX(CASE WHEN s.weekday = 'ЧТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ЧТ', MAX(CASE WHEN s.weekday = 'ПТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПТ', MAX(CASE WHEN s.weekday = 'СБ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СБ' FROM (SELECT 1 AS lesson_number UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6) AS l LEFT JOIN schedule s ON l.lesson_number = s.lesson_number AND s.week = 'Верхняя' AND s.group_name = '{0}' LEFT JOIN teachers t ON s.tutor_id = t.tutor_id GROUP BY l.lesson_number ORDER BY l.lesson_number;</value>
-  </data>
-  <data name="guna2TileButton10.Tag" xml:space="preserve">
-    <value>SELECT l.lesson_number AS '№', MAX(CASE WHEN s.weekday = 'ПН' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПН', MAX(CASE WHEN s.weekday = 'ВТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ВТ', MAX(CASE WHEN s.weekday = 'СР' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СР', MAX(CASE WHEN s.weekday = 'ЧТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ЧТ', MAX(CASE WHEN s.weekday = 'ПТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПТ', MAX(CASE WHEN s.weekday = 'СБ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СБ' FROM (SELECT 1 AS lesson_number UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6) AS l LEFT JOIN schedule s ON l.lesson_number = s.lesson_number AND s.week = 'Нижняя' AND s.group_name = '{0}' LEFT JOIN teachers t ON s.tutor_id = t.tutor_id GROUP BY l.lesson_number ORDER BY l.lesson_number;</value>
-  </data>
-  <metadata name="Column26.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column15.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column16.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column17.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column18.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column19.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column20.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="guna2DataGridViewРасписание2.Tag" xml:space="preserve">
-    <value>SELECT l.lesson_number AS '№', MAX(CASE WHEN s.weekday = 'ПН' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПН', MAX(CASE WHEN s.weekday = 'ВТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ВТ', MAX(CASE WHEN s.weekday = 'СР' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СР', MAX(CASE WHEN s.weekday = 'ЧТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ЧТ', MAX(CASE WHEN s.weekday = 'ПТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПТ', MAX(CASE WHEN s.weekday = 'СБ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СБ' FROM (SELECT 1 AS lesson_number UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6) AS l LEFT JOIN schedule s ON l.lesson_number = s.lesson_number AND s.week = 'Верхняя' AND s.group_name = '{0}' LEFT JOIN teachers t ON s.tutor_id = t.tutor_id GROUP BY l.lesson_number ORDER BY l.lesson_number;</value>
-  </data>
-  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column9.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column10.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column11.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column12.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column13.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column14.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="guna2HtmlLabel17.Tag" xml:space="preserve">
-    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT registered_address_id FROM students WHERE student_id='{0}');</value>
-  </data>
-  <data name="guna2HtmlLabel16.Tag" xml:space="preserve">
-    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT actual_address_id FROM students WHERE student_id='{0}');</value>
-  </data>
-  <data name="guna2HtmlLabel27.Tag" xml:space="preserve">
-    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT actual_address_id FROM students WHERE student_id='{0}');</value>
-  </data>
-  <data name="guna2HtmlLabel28.Tag" xml:space="preserve">
-    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT registered_address_id FROM students WHERE student_id='{0}');</value>
-  </data>
-  <metadata name="dataGridViewTextBoxColumn6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column21.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column22.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column23.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column24.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column25.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="guna2HtmlLabel19.Tag" xml:space="preserve">
-    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT actual_address_id FROM students WHERE actual_address_id={0} LIMIT 1);</value>
-  </data>
-  <data name="guna2HtmlLabel20.Tag" xml:space="preserve">
-    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT registered_address_id FROM students WHERE registered_address_id={0} LIMIT 1);</value>
-  </data>
-  <metadata name="Column28.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn9.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn10.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn11.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="guna2DataGridViewАдреса.Tag" xml:space="preserve">
-    <value>SELECT address_id, city, street, house, apartment FROM addresses, students WHERE (group_name = '{0}' AND students.registered_address_id = addresses.address_id) OR (group_name = '{0}' AND students.actual_address_id = addresses.address_id)</value>
-  </data>
-  <data name="guna2HtmlLabel5.Tag" xml:space="preserve">
-    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT actual_address_id FROM students WHERE student_id='{0}');</value>
-  </data>
-  <data name="guna2HtmlLabel4.Tag" xml:space="preserve">
-    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT registered_address_id FROM students WHERE student_id='{0}');</value>
-  </data>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="guna2TextBox1.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        AABJRU5ErkJggg==
-</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEANzcAAAEAIAAkMQAAFgAAACgAAAA3AAAAbgAAAAEAIAAAAAAARC8AABMLAAATCwAAAAAAAAAA
@@ -522,9 +339,192 @@
   <metadata name="guna2ShadowForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>192, 17</value>
   </metadata>
+  <data name="guna2TextBox1.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="guna2HtmlLabel5.Tag" xml:space="preserve">
+    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT actual_address_id FROM students WHERE student_id='{0}');</value>
+  </data>
+  <data name="guna2HtmlLabel4.Tag" xml:space="preserve">
+    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT registered_address_id FROM students WHERE student_id='{0}');</value>
+  </data>
+  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="guna2HtmlLabel27.Tag" xml:space="preserve">
+    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT actual_address_id FROM students WHERE student_id='{0}');</value>
+  </data>
+  <data name="guna2HtmlLabel28.Tag" xml:space="preserve">
+    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT registered_address_id FROM students WHERE student_id='{0}');</value>
+  </data>
+  <metadata name="dataGridViewTextBoxColumn6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column21.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column22.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column23.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column24.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column25.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column27.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="guna2DataGridViewРасписание1.Tag" xml:space="preserve">
+    <value>SELECT s.lesson_number, subject_name, CONCAT(t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') AS teacher, s.week, s.weekday FROM schedule s JOIN teachers t ON s.tutor_id = t.tutor_id WHERE s.group_name = '{0}' ORDER BY s.lesson_number, FIELD(s.weekday, 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ');
+</value>
+  </data>
+  <data name="guna2TileButton11.Tag" xml:space="preserve">
+    <value>SELECT l.lesson_number AS '№', MAX(CASE WHEN s.weekday = 'ПН' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПН', MAX(CASE WHEN s.weekday = 'ВТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ВТ', MAX(CASE WHEN s.weekday = 'СР' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СР', MAX(CASE WHEN s.weekday = 'ЧТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ЧТ', MAX(CASE WHEN s.weekday = 'ПТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПТ', MAX(CASE WHEN s.weekday = 'СБ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СБ' FROM (SELECT 1 AS lesson_number UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6) AS l LEFT JOIN schedule s ON l.lesson_number = s.lesson_number AND s.week = 'Верхняя' AND s.group_name = '{0}' LEFT JOIN teachers t ON s.tutor_id = t.tutor_id GROUP BY l.lesson_number ORDER BY l.lesson_number;</value>
+  </data>
+  <data name="guna2TileButton10.Tag" xml:space="preserve">
+    <value>SELECT l.lesson_number AS '№', MAX(CASE WHEN s.weekday = 'ПН' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПН', MAX(CASE WHEN s.weekday = 'ВТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ВТ', MAX(CASE WHEN s.weekday = 'СР' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СР', MAX(CASE WHEN s.weekday = 'ЧТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ЧТ', MAX(CASE WHEN s.weekday = 'ПТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПТ', MAX(CASE WHEN s.weekday = 'СБ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СБ' FROM (SELECT 1 AS lesson_number UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6) AS l LEFT JOIN schedule s ON l.lesson_number = s.lesson_number AND s.week = 'Нижняя' AND s.group_name = '{0}' LEFT JOIN teachers t ON s.tutor_id = t.tutor_id GROUP BY l.lesson_number ORDER BY l.lesson_number;</value>
+  </data>
+  <metadata name="Column26.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column15.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column16.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column17.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column18.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column19.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column20.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="guna2DataGridViewРасписание2.Tag" xml:space="preserve">
+    <value>SELECT l.lesson_number AS '№', MAX(CASE WHEN s.weekday = 'ПН' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПН', MAX(CASE WHEN s.weekday = 'ВТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ВТ', MAX(CASE WHEN s.weekday = 'СР' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СР', MAX(CASE WHEN s.weekday = 'ЧТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ЧТ', MAX(CASE WHEN s.weekday = 'ПТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПТ', MAX(CASE WHEN s.weekday = 'СБ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СБ' FROM (SELECT 1 AS lesson_number UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6) AS l LEFT JOIN schedule s ON l.lesson_number = s.lesson_number AND s.week = 'Верхняя' AND s.group_name = '{0}' LEFT JOIN teachers t ON s.tutor_id = t.tutor_id GROUP BY l.lesson_number ORDER BY l.lesson_number;</value>
+  </data>
+  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column9.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column10.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column11.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column12.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column13.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column14.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="guna2HtmlLabel17.Tag" xml:space="preserve">
+    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT registered_address_id FROM students WHERE student_id='{0}');</value>
+  </data>
+  <data name="guna2HtmlLabel16.Tag" xml:space="preserve">
+    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT actual_address_id FROM students WHERE student_id='{0}');</value>
+  </data>
   <metadata name="guna2DragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>355, 17</value>
   </metadata>
+  <data name="guna2HtmlLabel19.Tag" xml:space="preserve">
+    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT actual_address_id FROM students WHERE actual_address_id={0} LIMIT 1);</value>
+  </data>
+  <data name="guna2HtmlLabel20.Tag" xml:space="preserve">
+    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT registered_address_id FROM students WHERE registered_address_id={0} LIMIT 1);</value>
+  </data>
+  <metadata name="Column28.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn9.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn10.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn11.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="guna2DataGridViewАдреса.Tag" xml:space="preserve">
+    <value>SELECT address_id, city, street, house, apartment FROM addresses, students WHERE (group_name = '{0}' AND students.registered_address_id = addresses.address_id) OR (group_name = '{0}' AND students.actual_address_id = addresses.address_id)</value>
+  </data>
   <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>513, 17</value>
   </metadata>
