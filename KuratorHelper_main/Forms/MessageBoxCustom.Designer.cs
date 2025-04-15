@@ -190,7 +190,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MessageBoxCustom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "MessageBoxCustom";
+            this.Text = "Уведомление";
             this.Load += new System.EventHandler(this.MessageBoxCustom_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

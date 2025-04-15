@@ -46,8 +46,6 @@ namespace KuratorHelper_main
             {
                 guna2TileButton10, guna2TileButton11
             };
-
-            guna2DataGridViewРасписание2.Rows.Add("Английский\nЛузина И.А");
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -70,7 +68,7 @@ namespace KuratorHelper_main
         }
 
         // Обновление DGV из БД
-        private void UpdateDGVFromDB(Guna2DataGridView dgv = null)
+        private void UpdateDGVFromDB(Guna2DataGridView dgv = null, string querry = null)
         {
             foreach (Control ctrl1 in buttonsAndMainPanels[currentbutton].Controls)
             {
@@ -113,7 +111,6 @@ namespace KuratorHelper_main
         private void guna2TileButton3_Click_1(object sender, EventArgs e)
         {
             Guna2TileButton gtb = sender as Guna2TileButton;
-
             if (!gtb.Checked)
             {
                 currentbutton.Checked = false;
@@ -138,27 +135,7 @@ namespace KuratorHelper_main
             foreach (Guna2TileButton gunatb in schedulebuttons)
                 gunatb.Checked = false;
             gtb.Checked = true;
-
-            if (gtb.Text == "Верхняя")
-                guna2DataGridViewРасписание2.Tag = "SELECT s.lesson_number AS 'Номер пары', MAX(CASE WHEN s.weekday = 'ПН' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', " +
-                    "LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'ПН', MAX(CASE WHEN s.weekday = 'ВТ' " +
-                    "THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'ВТ', " +
-                    "MAX(CASE WHEN s.weekday = 'СР' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
-                    "ELSE '' END) AS 'СР', MAX(CASE WHEN s.weekday = 'ЧТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
-                    "ELSE '' END) AS 'ЧТ', MAX(CASE WHEN s.weekday = 'ПТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
-                    "ELSE '' END) AS 'ПТ', MAX(CASE WHEN s.weekday = 'СБ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
-                    "ELSE '' END) AS 'СБ' FROM schedule s JOIN teachers t ON s.tutor_id = t.tutor_id WHERE s.week = 'Верхняя' AND s.group_name = '{0}' " +
-                    "GROUP BY s.lesson_number ORDER BY s.lesson_number;";
-            else
-                guna2DataGridViewРасписание2.Tag = "SELECT s.lesson_number AS 'Номер пары', MAX(CASE WHEN s.weekday = 'ПН' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', " +
-                    "LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'ПН', MAX(CASE WHEN s.weekday = 'ВТ' " +
-                    "THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') ELSE '' END) AS 'ВТ', " +
-                    "MAX(CASE WHEN s.weekday = 'СР' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
-                    "ELSE '' END) AS 'СР', MAX(CASE WHEN s.weekday = 'ЧТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
-                    "ELSE '' END) AS 'ЧТ', MAX(CASE WHEN s.weekday = 'ПТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
-                    "ELSE '' END) AS 'ПТ', MAX(CASE WHEN s.weekday = 'СБ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') " +
-                    "ELSE '' END) AS 'СБ' FROM schedule s JOIN teachers t ON s.tutor_id = t.tutor_id WHERE s.week = 'Нижняя' AND s.group_name = '{0}' " +
-                    "GROUP BY s.lesson_number ORDER BY s.lesson_number;";
+            guna2DataGridViewРасписание2.Tag = gtb.Tag;
             UpdateDGVFromDB(guna2DataGridViewРасписание2);
         }
 
@@ -182,6 +159,52 @@ namespace KuratorHelper_main
                     }
                 }
             }
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            //Guna2DataGridView dgv = currentpanel.Controls.OfType<Guna2DataGridView>().First();
+
+            //Guna2TextBox txb = null;
+            //Guna2ComboBox combobox = currentpanel.Controls.OfType<Guna2ComboBox>().FirstOrDefault();
+
+            //// Определяем, откуда пришел вызов
+            //if (sender is Guna2TextBox)
+            //{
+            //    txb = sender as Guna2TextBox;
+            //}
+            //else if (sender is Guna2ComboBox)
+            //{
+            //    combobox = sender as Guna2ComboBox;
+            //    txb = currentpanel.Controls.OfType<Guna2TextBox>().FirstOrDefault();
+            //}
+
+            //if (dgv.DataSource is DataTable table)
+            //{
+            //    string filterExpression = string.Empty;
+
+            //    // Фильтрация по текстовому полю
+            //    if (!string.IsNullOrEmpty(txb.Text))
+            //    {
+            //        foreach (DataColumn col in table.Columns)
+            //        {
+
+            //            filterExpression += $"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{txb.Text}%' OR ";
+            //        }
+            //        filterExpression = filterExpression.TrimEnd(" OR ".ToCharArray());
+            //    }
+
+            //    // Фильтрация по ComboBox
+            //    if (combobox != null && combobox.SelectedItem.ToString() != "Все")
+            //    {
+            //        string comboboxTagTemp = VoidsMain.columnheadertexts[combobox.Tag.ToString()];
+            //        string comboFilter = $"[{comboboxTagTemp}] = '{combobox.SelectedItem}'";
+            //        filterExpression = string.IsNullOrEmpty(filterExpression) ? comboFilter : $"{comboFilter} AND ({filterExpression})";
+            //    }
+
+            //    // Применение фильтрации
+            //    (table.DefaultView).RowFilter = filterExpression;
+            //}
         }
     }
 }
