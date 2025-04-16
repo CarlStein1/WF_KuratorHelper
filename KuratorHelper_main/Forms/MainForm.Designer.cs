@@ -333,10 +333,8 @@
             selectQuery1.query = resources.GetString("selectQuery1.query");
             selectQuery1.TargetGrid = this.guna2DataGridViewРасписание1;
             this.guna2DataGridViewРасписание1.QuerySelectCommand = selectQuery1;
-            this.guna2DataGridViewРасписание1.QueryUpdate = "UPDATE {dgv.Tag} SET {changingcell} = {querrytext} WHERE {primarykey} = \'{keyvalu" +
-    "e}\'";
-            insDelUpdQuery3.query = "UPDATE {dgv.Tag} SET {changingcell} = {querrytext} WHERE {primarykey} = \'{keyvalu" +
-    "e}\'";
+            this.guna2DataGridViewРасписание1.QueryUpdate = "";
+            insDelUpdQuery3.query = "";
             insDelUpdQuery3.TargetGrid = this.guna2DataGridViewРасписание1;
             this.guna2DataGridViewРасписание1.QueryUpdateCommand = insDelUpdQuery3;
             this.guna2DataGridViewРасписание1.ReadOnlyForeignKey = true;
@@ -623,7 +621,7 @@
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridViewАкадемы.DefaultCellStyle = dataGridViewCellStyle13;
             this.guna2DataGridViewАкадемы.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.guna2DataGridViewАкадемы.HidePrimary = false;
+            this.guna2DataGridViewАкадемы.HidePrimary = true;
             this.guna2DataGridViewАкадемы.Location = new System.Drawing.Point(12, 12);
             this.guna2DataGridViewАкадемы.Margin = new System.Windows.Forms.Padding(12);
             this.guna2DataGridViewАкадемы.Name = "guna2DataGridViewАкадемы";
@@ -635,18 +633,12 @@
             insDelUpdQuery8.query = null;
             insDelUpdQuery8.TargetGrid = this.guna2DataGridViewАкадемы;
             this.guna2DataGridViewАкадемы.QueryInsertCommand = insDelUpdQuery8;
-            this.guna2DataGridViewАкадемы.QuerySelect = "SELECT student_card, expulsion_date, expulsion_order, restoration_group, restorat" +
-    "ion_date, restoration_order FROM academics a, students s WHERE expulsion_group =" +
-    " \'{0}\' AND a.student_id = s.student_id";
-            selectQuery3.query = "SELECT student_card, expulsion_date, expulsion_order, restoration_group, restorat" +
-    "ion_date, restoration_order FROM academics a, students s WHERE expulsion_group =" +
-    " \'{0}\' AND a.student_id = s.student_id";
+            this.guna2DataGridViewАкадемы.QuerySelect = resources.GetString("guna2DataGridViewАкадемы.QuerySelect");
+            selectQuery3.query = resources.GetString("selectQuery3.query");
             selectQuery3.TargetGrid = this.guna2DataGridViewАкадемы;
             this.guna2DataGridViewАкадемы.QuerySelectCommand = selectQuery3;
-            this.guna2DataGridViewАкадемы.QueryUpdate = "UPDATE {dgv.Tag} SET {changingcell} = {querrytext} WHERE {primarykey} = (SELECT {" +
-    "primarykey} FROM {dgv.Tag} WHERE {primarykey} = \'{keyvalue}\')";
-            insDelUpdQuery9.query = "UPDATE {dgv.Tag} SET {changingcell} = {querrytext} WHERE {primarykey} = (SELECT {" +
-    "primarykey} FROM {dgv.Tag} WHERE {primarykey} = \'{keyvalue}\')";
+            this.guna2DataGridViewАкадемы.QueryUpdate = "";
+            insDelUpdQuery9.query = "";
             insDelUpdQuery9.TargetGrid = this.guna2DataGridViewАкадемы;
             this.guna2DataGridViewАкадемы.QueryUpdateCommand = insDelUpdQuery9;
             this.guna2DataGridViewАкадемы.ReadOnlyForeignKey = true;
@@ -711,6 +703,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Зачетка";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // Column9
             // 
@@ -788,7 +781,7 @@
             dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridViewДокументы.DefaultCellStyle = dataGridViewCellStyle18;
             this.guna2DataGridViewДокументы.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.guna2DataGridViewДокументы.HidePrimary = false;
+            this.guna2DataGridViewДокументы.HidePrimary = true;
             this.guna2DataGridViewДокументы.Location = new System.Drawing.Point(12, 12);
             this.guna2DataGridViewДокументы.Margin = new System.Windows.Forms.Padding(12);
             this.guna2DataGridViewДокументы.Name = "guna2DataGridViewДокументы";
@@ -800,18 +793,16 @@
             insDelUpdQuery11.query = null;
             insDelUpdQuery11.TargetGrid = this.guna2DataGridViewДокументы;
             this.guna2DataGridViewДокументы.QueryInsertCommand = insDelUpdQuery11;
-            this.guna2DataGridViewДокументы.QuerySelect = "SELECT s.student_card, passport_series, passport_number, inn, snils, military_sta" +
-    "tus FROM students s, documents d WHERE group_name = \'{0}\' AND s.student_id = d.s" +
-    "tudent_id;";
-            selectQuery4.query = "SELECT s.student_card, passport_series, passport_number, inn, snils, military_sta" +
-    "tus FROM students s, documents d WHERE group_name = \'{0}\' AND s.student_id = d.s" +
-    "tudent_id;";
+            this.guna2DataGridViewДокументы.QuerySelect = "SELECT s.student_id, s.student_card, passport_series, passport_number, inn, snils" +
+    ", military_status FROM students s, documents d WHERE group_name = \'{0}\' AND s.st" +
+    "udent_id = d.student_id;";
+            selectQuery4.query = "SELECT s.student_id, s.student_card, passport_series, passport_number, inn, snils" +
+    ", military_status FROM students s, documents d WHERE group_name = \'{0}\' AND s.st" +
+    "udent_id = d.student_id;";
             selectQuery4.TargetGrid = this.guna2DataGridViewДокументы;
             this.guna2DataGridViewДокументы.QuerySelectCommand = selectQuery4;
-            this.guna2DataGridViewДокументы.QueryUpdate = "UPDATE {dgv.Tag} SET {changingcell} = {querrytext} WHERE {primarykey} = (SELECT {" +
-    "primarykey} FROM {dgv.Tag} WHERE {primarykey} = \'{keyvalue}\')";
-            insDelUpdQuery12.query = "UPDATE {dgv.Tag} SET {changingcell} = {querrytext} WHERE {primarykey} = (SELECT {" +
-    "primarykey} FROM {dgv.Tag} WHERE {primarykey} = \'{keyvalue}\')";
+            this.guna2DataGridViewДокументы.QueryUpdate = "";
+            insDelUpdQuery12.query = "";
             insDelUpdQuery12.TargetGrid = this.guna2DataGridViewДокументы;
             this.guna2DataGridViewДокументы.QueryUpdateCommand = insDelUpdQuery12;
             this.guna2DataGridViewДокументы.ReadOnlyForeignKey = true;
@@ -876,6 +867,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Зачетка";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
             // 
             // Column21
             // 
@@ -941,7 +933,7 @@
             dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridViewАдреса.DefaultCellStyle = dataGridViewCellStyle23;
             this.guna2DataGridViewАдреса.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.guna2DataGridViewАдреса.HidePrimary = false;
+            this.guna2DataGridViewАдреса.HidePrimary = true;
             this.guna2DataGridViewАдреса.Location = new System.Drawing.Point(12, 12);
             this.guna2DataGridViewАдреса.Margin = new System.Windows.Forms.Padding(12);
             this.guna2DataGridViewАдреса.Name = "guna2DataGridViewАдреса";
@@ -957,10 +949,8 @@
             selectQuery5.query = resources.GetString("selectQuery5.query");
             selectQuery5.TargetGrid = this.guna2DataGridViewАдреса;
             this.guna2DataGridViewАдреса.QuerySelectCommand = selectQuery5;
-            this.guna2DataGridViewАдреса.QueryUpdate = "UPDATE {dgv.Tag} SET {changingcell} = {querrytext} WHERE {primarykey} = (SELECT {" +
-    "primarykey} FROM {dgv.Tag} WHERE {primarykey} = \'{keyvalue}\')";
-            insDelUpdQuery15.query = "UPDATE {dgv.Tag} SET {changingcell} = {querrytext} WHERE {primarykey} = (SELECT {" +
-    "primarykey} FROM {dgv.Tag} WHERE {primarykey} = \'{keyvalue}\')";
+            this.guna2DataGridViewАдреса.QueryUpdate = "";
+            insDelUpdQuery15.query = "";
             insDelUpdQuery15.TargetGrid = this.guna2DataGridViewАдреса;
             this.guna2DataGridViewАдреса.QueryUpdateCommand = insDelUpdQuery15;
             this.guna2DataGridViewАдреса.ReadOnlyForeignKey = true;
@@ -1024,6 +1014,7 @@
             this.Column28.HeaderText = "Зачетка";
             this.Column28.Name = "Column28";
             this.Column28.ReadOnly = true;
+            this.Column28.Visible = false;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -1087,7 +1078,7 @@
             dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridViewСтуденты.DefaultCellStyle = dataGridViewCellStyle28;
             this.guna2DataGridViewСтуденты.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.guna2DataGridViewСтуденты.HidePrimary = false;
+            this.guna2DataGridViewСтуденты.HidePrimary = true;
             this.guna2DataGridViewСтуденты.Location = new System.Drawing.Point(12, 12);
             this.guna2DataGridViewСтуденты.Margin = new System.Windows.Forms.Padding(12);
             this.guna2DataGridViewСтуденты.Name = "guna2DataGridViewСтуденты";
@@ -1099,19 +1090,17 @@
             insDelUpdQuery17.query = null;
             insDelUpdQuery17.TargetGrid = this.guna2DataGridViewСтуденты;
             this.guna2DataGridViewСтуденты.QueryInsertCommand = insDelUpdQuery17;
-            this.guna2DataGridViewСтуденты.QuerySelect = "SELECT student_card, last_name, first_name, middle_name, gender, birth_date, stat" +
-    "us FROM students WHERE group_name = \'{0}\'";
-            selectQuery6.query = "SELECT student_card, last_name, first_name, middle_name, gender, birth_date, stat" +
-    "us FROM students WHERE group_name = \'{0}\'";
+            this.guna2DataGridViewСтуденты.QuerySelect = "SELECT student_id, student_card, last_name, first_name, middle_name, gender, birt" +
+    "h_date, status FROM students WHERE group_name = \'{0}\'";
+            selectQuery6.query = "SELECT student_id, student_card, last_name, first_name, middle_name, gender, birt" +
+    "h_date, status FROM students WHERE group_name = \'{0}\'";
             selectQuery6.TargetGrid = this.guna2DataGridViewСтуденты;
             this.guna2DataGridViewСтуденты.QuerySelectCommand = selectQuery6;
-            this.guna2DataGridViewСтуденты.QueryUpdate = "UPDATE {dgv.Tag} SET {changingcell} = {querrytext} WHERE {primarykey} = (SELECT {" +
-    "primarykey} FROM {dgv.Tag} WHERE {primarykey} = \'{keyvalue}\')";
-            insDelUpdQuery18.query = "UPDATE {dgv.Tag} SET {changingcell} = {querrytext} WHERE {primarykey} = (SELECT {" +
-    "primarykey} FROM {dgv.Tag} WHERE {primarykey} = \'{keyvalue}\')";
+            this.guna2DataGridViewСтуденты.QueryUpdate = "";
+            insDelUpdQuery18.query = "";
             insDelUpdQuery18.TargetGrid = this.guna2DataGridViewСтуденты;
             this.guna2DataGridViewСтуденты.QueryUpdateCommand = insDelUpdQuery18;
-            this.guna2DataGridViewСтуденты.ReadOnlyForeignKey = false;
+            this.guna2DataGridViewСтуденты.ReadOnlyForeignKey = true;
             this.guna2DataGridViewСтуденты.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(44)))));
@@ -1172,6 +1161,8 @@
             this.Column1.FillWeight = 96.8818F;
             this.Column1.HeaderText = "Зачетка";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
             // 
             // Column2
             // 
@@ -2829,11 +2820,11 @@
             // 
             // guna2ContainerControl1
             // 
+            this.guna2ContainerControl1.Controls.Add(this.guna2CustomGradientPanelАдреса);
+            this.guna2ContainerControl1.Controls.Add(this.guna2CustomGradientPanelСтуденты);
             this.guna2ContainerControl1.Controls.Add(this.guna2CustomGradientPanelРасписание);
             this.guna2ContainerControl1.Controls.Add(this.guna2CustomGradientPanelАкадемы);
             this.guna2ContainerControl1.Controls.Add(this.guna2CustomGradientPanelДокументы);
-            this.guna2ContainerControl1.Controls.Add(this.guna2CustomGradientPanelАдреса);
-            this.guna2ContainerControl1.Controls.Add(this.guna2CustomGradientPanelСтуденты);
             this.guna2ContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ContainerControl1.Location = new System.Drawing.Point(60, 60);
             this.guna2ContainerControl1.Margin = new System.Windows.Forms.Padding(0);

@@ -155,7 +155,7 @@ namespace KuratorHelper_main
                             {
                                 (ctrl1 as Guna2HtmlLabel).AccessibleDescription = "";
                             }
-                            ctrl1.Text = ctrl1.AccessibleDescription.ToString() + " " + VoidsMain.SelectRequestAsList(string.Format(ctrl1.Tag.ToString(), (sender as CustomGuna2DataGridView).SelectedRows[0].Cells[0].Value), connectionstring)[0][0];
+                            ctrl1.Text = ctrl1.AccessibleDescription.ToString() + " " + VoidsMain.SelectRequestAsList(string.Format(ctrl1.Tag.ToString(), (sender as CustomGuna2DataGridView).SelectedRows[0].Cells[1].Value), connectionstring)[0][0];
                         }
                     }
                 }
@@ -226,8 +226,6 @@ namespace KuratorHelper_main
                 }
 
                 string primarykey = dgv.Columns[0].HeaderCell.Value.ToString();
-                string keyvalue;
-                if (primarykeyvalue != null) keyvalue = primarykeyvalue; else keyvalue = dgv.Rows[e.RowIndex].Cells[0].Value.ToString();
                 string changingcell = dgv.Columns[e.ColumnIndex].HeaderCell.Value.ToString();
 
                 if (VoidsMain.columnheadertexts.Values.Contains(primarykey))
@@ -249,20 +247,12 @@ namespace KuratorHelper_main
                         break;
                 }
 
-                // Применение изменений в БД
+                //Применение изменений в БД
                 try
                 {
-                    if (!string.IsNullOrEmpty(dgv.QueryUpdate))
-                    {
-                        dgv.QueryUpdate = string.Format(dgv.QueryUpdate, dgv.Tag.ToString(), changingcell, querrytext, primarykey, primarykey, dgv.Tag.ToString(), primarykey, keyvalue);
-                    }
-                    else
-                    {
-                        dgv.QueryUpdate = string.Format(dgv.QueryUpdate, dgv.Tag.ToString(), changingcell, querrytext, primarykey, keyvalue);
-                    }
-                    //dgv.QueryUpdate = ($@"UPDATE {dgv.Tag} SET {changingcell} = {querrytext} WHERE {primarykey} = (SELECT {primarykey} FROM {dgv.Tag} WHERE {primarykey} = '{keyvalue}')");
+                    dgv.QueryUpdate = ($@"UPDATE {dgv.Tag} SET {changingcell} = {querrytext} WHERE {primarykey} = '{dgv.Rows[e.RowIndex].Cells[0].Value}'");
                     dgv.QueryUpdateCommand.ExecuteQuery();
-                    UpdateDGVFromDB(1);
+                    UpdateDGVFromDB();
                 }
                 catch
                 {

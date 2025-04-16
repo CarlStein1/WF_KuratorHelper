@@ -22,11 +22,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
@@ -37,7 +49,7 @@
               "ToolTip": "F:\\3 \u041A\u0443\u0440\u0441\\\u0428\u0438\u043D\u0430\u043A\u043E\u0432\u0430 \u0421.\u0412\\\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u0434\u0430 \u0418\u0421\\\u041F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0440\u0430\u0431\u043E\u0442\u044B\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\WF_KuratorHelper\\KuratorHelper_main\\Forms\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "KuratorHelper_main\\Forms\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T00:52:12.12Z",
+              "WhenOpened": "2025-04-16T01:36:09.82Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
@@ -48,9 +60,9 @@
               "RelativeDocumentMoniker": "KuratorHelper_main\\Forms\\MainForm.cs",
               "ToolTip": "F:\\3 \u041A\u0443\u0440\u0441\\\u0428\u0438\u043D\u0430\u043A\u043E\u0432\u0430 \u0421.\u0412\\\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u0434\u0430 \u0418\u0421\\\u041F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0440\u0430\u0431\u043E\u0442\u044B\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\WF_KuratorHelper\\KuratorHelper_main\\Forms\\MainForm.cs",
               "RelativeToolTip": "KuratorHelper_main\\Forms\\MainForm.cs",
-              "ViewState": "AgIAAOAAAAAAAAAAAAAswAcBAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAOAAAAAAAAAAAAAswP4AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T00:41:25.97Z",
+              "WhenOpened": "2025-04-16T01:07:55.65Z",
               "EditorCaption": ""
             },
             {
@@ -61,9 +73,9 @@
               "RelativeDocumentMoniker": "KuratorHelper_main\\CustomControls.cs",
               "ToolTip": "F:\\3 \u041A\u0443\u0440\u0441\\\u0428\u0438\u043D\u0430\u043A\u043E\u0432\u0430 \u0421.\u0412\\\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u0434\u0430 \u0418\u0421\\\u041F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0440\u0430\u0431\u043E\u0442\u044B\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\WF_KuratorHelper\\KuratorHelper_main\\CustomControls.cs",
               "RelativeToolTip": "KuratorHelper_main\\CustomControls.cs",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAYwJwAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAxwH4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T00:40:34.675Z",
+              "WhenOpened": "2025-04-16T01:05:58.181Z",
               "EditorCaption": ""
             }
           ]
