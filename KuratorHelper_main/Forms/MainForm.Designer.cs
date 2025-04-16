@@ -120,21 +120,11 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2DataGridViewСтуденты = new KuratorHelper_main.CustomGuna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -241,6 +231,17 @@
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridViewРасписание1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridViewРасписание2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridViewАкадемы)).BeginInit();
@@ -248,7 +249,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridViewАдреса)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridViewСтуденты)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanelСтуденты.SuspendLayout();
             this.guna2GradientPanelСтуденты.SuspendLayout();
@@ -275,6 +275,7 @@
             this.guna2GradientPanel19.SuspendLayout();
             this.guna2ContextMenuStrip4.SuspendLayout();
             this.guna2ContextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2DataGridViewРасписание1
@@ -325,8 +326,10 @@
             insDelUpdQuery1.query = null;
             insDelUpdQuery1.TargetGrid = this.guna2DataGridViewРасписание1;
             this.guna2DataGridViewРасписание1.QueryDeleteCommand = insDelUpdQuery1;
-            this.guna2DataGridViewРасписание1.QueryInsert = null;
-            insDelUpdQuery2.query = null;
+            this.guna2DataGridViewРасписание1.QueryInsert = "INSERT INTO `schedule`(`lesson_number`, `subject_name`, `tutor_id`, `week`, `week" +
+    "day`, `group_name`) VALUES ({0},\'{1}\')";
+            insDelUpdQuery2.query = "INSERT INTO `schedule`(`lesson_number`, `subject_name`, `tutor_id`, `week`, `week" +
+    "day`, `group_name`) VALUES ({0},\'{1}\')";
             insDelUpdQuery2.TargetGrid = this.guna2DataGridViewРасписание1;
             this.guna2DataGridViewРасписание1.QueryInsertCommand = insDelUpdQuery2;
             this.guna2DataGridViewРасписание1.QuerySelect = resources.GetString("guna2DataGridViewРасписание1.QuerySelect");
@@ -390,7 +393,9 @@
             this.guna2DataGridViewРасписание1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridViewРасписание1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2DataGridViewРасписание1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.guna2DataGridViewСтуденты_CellBeginEdit);
+            this.guna2DataGridViewРасписание1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewРасписание1_CellDoubleClick);
             this.guna2DataGridViewРасписание1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellEndEdit);
+            this.guna2DataGridViewРасписание1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellLeave);
             this.guna2DataGridViewРасписание1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.guna2DataGridViewСтуденты_CellMouseClick);
             this.guna2DataGridViewРасписание1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellValueChanged);
             // 
@@ -692,7 +697,9 @@
             this.guna2DataGridViewАкадемы.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridViewАкадемы.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2DataGridViewАкадемы.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.guna2DataGridViewСтуденты_CellBeginEdit);
+            this.guna2DataGridViewАкадемы.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewРасписание1_CellDoubleClick);
             this.guna2DataGridViewАкадемы.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellEndEdit);
+            this.guna2DataGridViewАкадемы.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellLeave);
             this.guna2DataGridViewАкадемы.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.guna2DataGridViewСтуденты_CellMouseClick);
             this.guna2DataGridViewАкадемы.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellValueChanged);
             this.guna2DataGridViewАкадемы.SelectionChanged += new System.EventHandler(this.guna2DataGridViewСтуденты_SelectionChanged);
@@ -856,7 +863,9 @@
             this.guna2DataGridViewДокументы.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridViewДокументы.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2DataGridViewДокументы.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.guna2DataGridViewСтуденты_CellBeginEdit);
+            this.guna2DataGridViewДокументы.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewРасписание1_CellDoubleClick);
             this.guna2DataGridViewДокументы.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellEndEdit);
+            this.guna2DataGridViewДокументы.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellLeave);
             this.guna2DataGridViewДокументы.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.guna2DataGridViewСтуденты_CellMouseClick);
             this.guna2DataGridViewДокументы.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellValueChanged);
             this.guna2DataGridViewДокументы.SelectionChanged += new System.EventHandler(this.guna2DataGridViewСтуденты_SelectionChanged);
@@ -1004,7 +1013,9 @@
             this.guna2DataGridViewАдреса.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridViewАдреса.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2DataGridViewАдреса.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.guna2DataGridViewСтуденты_CellBeginEdit);
+            this.guna2DataGridViewАдреса.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewРасписание1_CellDoubleClick);
             this.guna2DataGridViewАдреса.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellEndEdit);
+            this.guna2DataGridViewАдреса.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellLeave);
             this.guna2DataGridViewАдреса.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.guna2DataGridViewСтуденты_CellMouseClick);
             this.guna2DataGridViewАдреса.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellValueChanged);
             this.guna2DataGridViewАдреса.SelectionChanged += new System.EventHandler(this.guna2DataGridViewСтуденты_SelectionChanged);
@@ -1067,8 +1078,7 @@
             this.Column4,
             this.Column5,
             this.Column6,
-            this.Column7,
-            this.Column8});
+            this.Column7});
             dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(44)))));
             dataGridViewCellStyle28.Font = new System.Drawing.Font("Candara Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1086,8 +1096,8 @@
             insDelUpdQuery16.query = null;
             insDelUpdQuery16.TargetGrid = this.guna2DataGridViewСтуденты;
             this.guna2DataGridViewСтуденты.QueryDeleteCommand = insDelUpdQuery16;
-            this.guna2DataGridViewСтуденты.QueryInsert = null;
-            insDelUpdQuery17.query = null;
+            this.guna2DataGridViewСтуденты.QueryInsert = resources.GetString("guna2DataGridViewСтуденты.QueryInsert");
+            insDelUpdQuery17.query = resources.GetString("insDelUpdQuery17.query");
             insDelUpdQuery17.TargetGrid = this.guna2DataGridViewСтуденты;
             this.guna2DataGridViewСтуденты.QueryInsertCommand = insDelUpdQuery17;
             this.guna2DataGridViewСтуденты.QuerySelect = "SELECT student_id, student_card, last_name, first_name, middle_name, gender, birt" +
@@ -1151,60 +1161,12 @@
             this.guna2DataGridViewСтуденты.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridViewСтуденты.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2DataGridViewСтуденты.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.guna2DataGridViewСтуденты_CellBeginEdit);
+            this.guna2DataGridViewСтуденты.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewРасписание1_CellDoubleClick);
             this.guna2DataGridViewСтуденты.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellEndEdit);
+            this.guna2DataGridViewСтуденты.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellLeave);
             this.guna2DataGridViewСтуденты.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.guna2DataGridViewСтуденты_CellMouseClick);
             this.guna2DataGridViewСтуденты.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellValueChanged);
             this.guna2DataGridViewСтуденты.SelectionChanged += new System.EventHandler(this.guna2DataGridViewСтуденты_SelectionChanged);
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 96.8818F;
-            this.Column1.HeaderText = "Зачетка";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 96.8818F;
-            this.Column2.HeaderText = "Фамилия";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 96.8818F;
-            this.Column3.HeaderText = "Имя";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 96.8818F;
-            this.Column4.HeaderText = "Отчество";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 96.8818F;
-            this.Column5.HeaderText = "Пол";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 121.8274F;
-            this.Column6.HeaderText = "ДатаРождения";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 96.8818F;
-            this.Column7.HeaderText = "Статус";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.FillWeight = 96.8818F;
-            this.Column8.HeaderText = "Группа";
-            this.Column8.Name = "Column8";
             // 
             // guna2BorderlessForm1
             // 
@@ -1288,51 +1250,6 @@
             this.guna2ComboBox1.Tag = "Position";
             this.guna2ComboBox1.TextOffset = new System.Drawing.Point(5, 0);
             this.guna2ComboBox1.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(38)))), ((int)(((byte)(52)))));
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(131)))), ((int)(((byte)(182)))));
-            this.guna2TextBox1.FocusedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
-            this.guna2TextBox1.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Candara Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(131)))), ((int)(((byte)(182)))));
-            this.guna2TextBox1.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
-            this.guna2TextBox1.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
-            this.guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconLeft")));
-            this.guna2TextBox1.Location = new System.Drawing.Point(1161, 15);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(0, 15, 30, 15);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "Поиск";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(282, 30);
-            this.guna2TextBox1.TabIndex = 29;
-            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::KuratorHelper_main.Properties.Resources.icon_keup;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.guna2GradientPanel1_MouseMove);
             // 
             // guna2ControlBox1
             // 
@@ -1621,6 +1538,7 @@
             this.guna2GradientPanelСтуденты.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanelСтуденты.BorderRadius = 15;
             this.guna2GradientPanelСтуденты.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.guna2GradientPanelСтуденты.Controls.Add(this.monthCalendar1);
             this.guna2GradientPanelСтуденты.Controls.Add(this.guna2HtmlLabel3);
             this.guna2GradientPanelСтуденты.Controls.Add(this.guna2HtmlLabel4);
             this.guna2GradientPanelСтуденты.Controls.Add(this.guna2HtmlLabel5);
@@ -1837,7 +1755,7 @@
             this.guna2TileButton3.BorderRadius = 10;
             this.guna2TileButton3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(204)))));
             this.guna2TileButton3.CustomImages.HoveredImage = global::KuratorHelper_main.Properties.Resources.icon_hover_confirm;
-            this.guna2TileButton3.CustomImages.Image = global::KuratorHelper_main.Properties.Resources.icon_confirm;
+            this.guna2TileButton3.CustomImages.Image = global::KuratorHelper_main.Properties.Resources.icon_confirm1;
             this.guna2TileButton3.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2TileButton3.CustomImages.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2TileButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(42)))));
@@ -1854,8 +1772,9 @@
             this.guna2TileButton3.Name = "guna2TileButton3";
             this.guna2TileButton3.Size = new System.Drawing.Size(36, 36);
             this.guna2TileButton3.TabIndex = 25;
-            this.guna2TileButton3.Tag = "students";
+            this.guna2TileButton3.Tag = "Confirm";
             this.guna2TileButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton3.Click += new System.EventHandler(this.guna2TileButton3_Click);
             // 
             // guna2TileButton2
             // 
@@ -1884,8 +1803,9 @@
             this.guna2TileButton2.Name = "guna2TileButton2";
             this.guna2TileButton2.Size = new System.Drawing.Size(36, 36);
             this.guna2TileButton2.TabIndex = 24;
-            this.guna2TileButton2.Tag = "students";
+            this.guna2TileButton2.Tag = "Delete";
             this.guna2TileButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton2.Click += new System.EventHandler(this.guna2TileButton2_Click);
             // 
             // guna2TileButton1
             // 
@@ -1914,8 +1834,9 @@
             this.guna2TileButton1.Name = "guna2TileButton1";
             this.guna2TileButton1.Size = new System.Drawing.Size(36, 36);
             this.guna2TileButton1.TabIndex = 23;
-            this.guna2TileButton1.Tag = "students";
+            this.guna2TileButton1.Tag = "Add";
             this.guna2TileButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton1.Click += new System.EventHandler(this.guna2TileButton1_Click);
             // 
             // guna2CustomGradientPanelДокументы
             // 
@@ -2429,8 +2350,9 @@
             this.guna2TileButton7.Name = "guna2TileButton7";
             this.guna2TileButton7.Size = new System.Drawing.Size(36, 36);
             this.guna2TileButton7.TabIndex = 25;
-            this.guna2TileButton7.Tag = "students";
+            this.guna2TileButton7.Tag = "Confirm";
             this.guna2TileButton7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton7.Click += new System.EventHandler(this.guna2TileButton3_Click);
             // 
             // guna2TileButton8
             // 
@@ -2459,8 +2381,9 @@
             this.guna2TileButton8.Name = "guna2TileButton8";
             this.guna2TileButton8.Size = new System.Drawing.Size(36, 36);
             this.guna2TileButton8.TabIndex = 24;
-            this.guna2TileButton8.Tag = "students";
+            this.guna2TileButton8.Tag = "Delete";
             this.guna2TileButton8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton8.Click += new System.EventHandler(this.guna2TileButton2_Click);
             // 
             // guna2TileButton9
             // 
@@ -2489,8 +2412,9 @@
             this.guna2TileButton9.Name = "guna2TileButton9";
             this.guna2TileButton9.Size = new System.Drawing.Size(36, 36);
             this.guna2TileButton9.TabIndex = 23;
-            this.guna2TileButton9.Tag = "students";
+            this.guna2TileButton9.Tag = "Add";
             this.guna2TileButton9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton9.Click += new System.EventHandler(this.guna2TileButton1_Click);
             // 
             // guna2CustomGradientPanelАкадемы
             // 
@@ -3243,12 +3167,13 @@
             this.guna2ContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
             this.guna2ContextMenuStrip1.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2ContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem5,
+            this.toolStripSeparator1,
             this.toolStripMenuItem9,
             this.toolStripMenuItem15,
-            this.toolStripMenuItem1,
-            this.toolStripSeparator1,
             this.toolStripMenuItem2,
             this.toolStripMenuItem3,
+            this.toolStripMenuItem1,
             this.toolStripMenuItem4,
             this.toolStripSeparator4,
             this.toolStripMenuItem7});
@@ -3262,7 +3187,7 @@
             this.guna2ContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(252, 184);
+            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(252, 208);
             // 
             // toolStripMenuItem9
             // 
@@ -3347,6 +3272,110 @@
             this.guna2Elipse2.BorderRadius = 15;
             this.guna2Elipse2.TargetControl = this.guna2DataGridViewАкадемы;
             // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(38)))), ((int)(((byte)(52)))));
+            this.guna2TextBox1.BorderRadius = 10;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(131)))), ((int)(((byte)(182)))));
+            this.guna2TextBox1.FocusedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
+            this.guna2TextBox1.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Candara Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(131)))), ((int)(((byte)(182)))));
+            this.guna2TextBox1.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
+            this.guna2TextBox1.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
+            this.guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconLeft")));
+            this.guna2TextBox1.Location = new System.Drawing.Point(1161, 15);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(0, 15, 30, 15);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PlaceholderText = "Поиск";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(282, 30);
+            this.guna2TextBox1.TabIndex = 29;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::KuratorHelper_main.Properties.Resources.icon_keup;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.guna2GradientPanel1_MouseMove);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.toolStripMenuItem5.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toolStripMenuItem5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(251, 24);
+            this.toolStripMenuItem5.Text = "Применить изменения";
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 96.8818F;
+            this.Column1.HeaderText = "Зачетка";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 96.8818F;
+            this.Column2.HeaderText = "Фамилия";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 96.8818F;
+            this.Column3.HeaderText = "Имя";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 96.8818F;
+            this.Column4.HeaderText = "Отчество";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 96.8818F;
+            this.Column5.HeaderText = "Пол";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 121.8274F;
+            this.Column6.HeaderText = "ДатаРождения";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 96.8818F;
+            this.Column7.HeaderText = "Статус";
+            this.Column7.Name = "Column7";
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(808, 0);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 31;
+            this.monthCalendar1.Visible = false;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3369,7 +3398,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridViewАдреса)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridViewСтуденты)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2CustomGradientPanelСтуденты.ResumeLayout(false);
             this.guna2GradientPanelСтуденты.ResumeLayout(false);
@@ -3400,6 +3428,7 @@
             this.guna2GradientPanel19.ResumeLayout(false);
             this.guna2ContextMenuStrip4.ResumeLayout(false);
             this.guna2ContextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3531,14 +3560,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
@@ -3563,6 +3584,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column27;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
 

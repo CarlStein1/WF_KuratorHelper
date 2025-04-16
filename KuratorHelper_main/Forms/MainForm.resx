@@ -254,9 +254,12 @@
   <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="guna2DataGridViewСтуденты.QueryInsert" xml:space="preserve">
+    <value>INSERT INTO students (`student_card`, `last_name`, `first_name`, `middle_name`, `gender`, `birth_date`, `status`, `group_name`, `registered_address_id`, `actual_address_id`) VALUES ({0},'{1}', NULL, NULL);</value>
+  </data>
+  <data name="insDelUpdQuery17.query" xml:space="preserve">
+    <value>INSERT INTO students (`student_card`, `last_name`, `first_name`, `middle_name`, `gender`, `birth_date`, `status`, `group_name`, `registered_address_id`, `actual_address_id`) VALUES ({0},'{1}', NULL, NULL);</value>
+  </data>
   <metadata name="guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
