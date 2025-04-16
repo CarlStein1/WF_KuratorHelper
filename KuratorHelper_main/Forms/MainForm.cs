@@ -17,7 +17,9 @@ namespace KuratorHelper_main
         Dictionary<Guna2TileButton, Guna2CustomGradientPanel> buttonsAndMainPanels = new Dictionary<Guna2TileButton, Guna2CustomGradientPanel>();
         Dictionary<Guna2CustomGradientPanel, Guna2GradientPanel> mainPanelsAndPanels = new Dictionary<Guna2CustomGradientPanel, Guna2GradientPanel>();
         Dictionary<Guna2TileButton, List<CustomGuna2DataGridView>> buttonsAndDGV = new Dictionary<Guna2TileButton, List<CustomGuna2DataGridView>>();
-        List<Guna2TileButton> schedulebuttons;
+        Dictionary<int, DataGridViewRow> addingRowsDict = new Dictionary<int, DataGridViewRow>(); // Словарь для записи временных строк, которые после можно будет внести в таблицу
+        string lastcellvalue; // Для записи первого значения редактируемой ячейки в DGV
+        string primarykeyvalue; // Для записи первого значения редактируемой ячейки в DGV
         Guna2TileButton currentbutton;
         internal string[] kuratordata;
 
@@ -52,10 +54,6 @@ namespace KuratorHelper_main
                 { guna2TileButtonАдреса, new List<CustomGuna2DataGridView> { guna2DataGridViewАдреса } },
                 { guna2TileButtonДокументы, new List<CustomGuna2DataGridView> { guna2DataGridViewДокументы } }
             };
-            schedulebuttons = new List<Guna2TileButton>
-            {
-                guna2TileButton10, guna2TileButton11
-            };
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -87,13 +85,27 @@ namespace KuratorHelper_main
                     foreach (CustomGuna2DataGridView dgv in buttonsAndDGV[currentbutton])
                     {
                         dgv.QuerySelect = string.Format(dgv.QuerySelect, guna2ComboBox1.SelectedItem?.ToString() ?? "");
-                        dgv.QuerySelectCommand.ExecuteQuerry(connectionstring);
+                        dgv.QuerySelectCommand.ExecuteQuery(connectionstring);
+
+                        foreach (DataGridViewColumn col in dgv.Columns)
+                            if (col.ValueType == typeof(DateTime))
+                            {
+                                col.DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
+                                col.ReadOnly = true;
+                            }
                     }
                 }
                 else
                 {
                     buttonsAndDGV[currentbutton][numbers].QuerySelect = string.Format(buttonsAndDGV[currentbutton][numbers].QuerySelect, guna2ComboBox1.SelectedItem?.ToString() ?? "");
-                    buttonsAndDGV[currentbutton][numbers].QuerySelectCommand.ExecuteQuerry(connectionstring);
+                    buttonsAndDGV[currentbutton][numbers].QuerySelectCommand.ExecuteQuery(connectionstring);
+
+                    foreach (DataGridViewColumn col in buttonsAndDGV[currentbutton][numbers].Columns)
+                        if (col.ValueType == typeof(DateTime))
+                        {
+                            col.DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
+                            col.ReadOnly = true;
+                        }
                 }
             }
         }
@@ -121,9 +133,8 @@ namespace KuratorHelper_main
         private void guna2TileButton10_Click_1(object sender, EventArgs e)
         {
             Guna2TileButton gtb = sender as Guna2TileButton;
-            
-            foreach (Guna2TileButton gunatb in schedulebuttons)
-                gunatb.Checked = false;
+
+            guna2TileButton10.Checked = guna2TileButton11.Checked = false;
             gtb.Checked = true;
             guna2DataGridViewРасписание2.QuerySelect = string.Format(gtb.Tag.ToString(), guna2ComboBox1.SelectedItem?.ToString() ?? "");
             UpdateDGVFromDB(1);
@@ -194,6 +205,99 @@ namespace KuratorHelper_main
                 // Применение фильтрации
                 (table.DefaultView).RowFilter = filterExpression;
             }
+        }
+
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridViewСтуденты_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            // Проверка индексации, чтобы не было ошибок
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                CustomGuna2DataGridView dgv = sender as CustomGuna2DataGridView;
+
+                // Проверка на изменение данных во временных строчках, которые не нужно применять, пока администратор не нажал на "Применить изменения"
+                if (addingRowsDict.Values.Contains(dgv.CurrentRow) == true)
+                {
+                    return;
+                }
+
+                string primarykey = dgv.Columns[0].HeaderCell.Value.ToString();
+                string keyvalue;
+                if (primarykeyvalue != null) keyvalue = primarykeyvalue; else keyvalue = dgv.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string changingcell = dgv.Columns[e.ColumnIndex].HeaderCell.Value.ToString();
+
+                if (VoidsMain.columnheadertexts.Values.Contains(primarykey))
+                    primarykey = VoidsMain.columnheadertexts.FirstOrDefault(x => x.Value == primarykey).Key;
+                if (VoidsMain.columnheadertexts.Values.Contains(changingcell))
+                    changingcell = VoidsMain.columnheadertexts.FirstOrDefault(x => x.Value == changingcell).Key;
+
+                string querrytext = string.Empty;
+                switch (dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value) // Проверка на соответствие типов данных, приведение их к читабельному варианту для БД
+                {
+                    case true:
+                        querrytext = "1";
+                        break;
+                    case false:
+                        querrytext = "0";
+                        break;
+                    default:
+                        querrytext = "\'" + dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + "\'";
+                        break;
+                }
+
+                // Применение изменений в БД
+                try
+                {
+                    if (!string.IsNullOrEmpty(dgv.QueryUpdate))
+                    {
+                        dgv.QueryUpdate = string.Format(dgv.QueryUpdate, dgv.Tag.ToString(), changingcell, querrytext, primarykey, primarykey, dgv.Tag.ToString(), primarykey, keyvalue);
+                    }
+                    else
+                    {
+                        dgv.QueryUpdate = string.Format(dgv.QueryUpdate, dgv.Tag.ToString(), changingcell, querrytext, primarykey, keyvalue);
+                    }
+                    //dgv.QueryUpdate = ($@"UPDATE {dgv.Tag} SET {changingcell} = {querrytext} WHERE {primarykey} = (SELECT {primarykey} FROM {dgv.Tag} WHERE {primarykey} = '{keyvalue}')");
+                    dgv.QueryUpdateCommand.ExecuteQuery();
+                    UpdateDGVFromDB(1);
+                }
+                catch
+                {
+                    VoidsMain.MessageBoxCustomShow("Ошибка запроса", "Невозможно выполнить запрос на изменение. Возможно введенное сообщение не соответствует формату!");
+                    dgv.CurrentCell.Value = lastcellvalue; // Возвращение изначального значения клетки
+                    return;
+                }
+            }
+        }
+
+        private void guna2DataGridViewСтуденты_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+                primarykeyvalue = (sender as Guna2DataGridView).CurrentCell.Value.ToString();
+            lastcellvalue = (sender as Guna2DataGridView).CurrentCell.Value.ToString();
+        }
+
+        private void guna2DataGridViewСтуденты_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            lastcellvalue = null;
+        }
+
+        private void guna2DataGridViewСтуденты_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0) // Проверяем, что это правая кнопка и строка
+            {
+                if ((sender as Guna2DataGridView).SelectedRows.Count < 3) (sender as Guna2DataGridView).ClearSelection();
+                (sender as Guna2DataGridView).Rows[e.RowIndex].Selected = true; // Выделяем строку
+                guna2ContextMenuStrip1.Show(Cursor.Position); // Показываем контекстное меню в месте курсора
+            }
+        }
+
+        private void toolStripMenuItem9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

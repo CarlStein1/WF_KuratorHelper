@@ -66,15 +66,16 @@ namespace KuratorHelper_main
         private string _queryDelete;
 
         [Browsable(false)]
-        public CustomQuery QuerySelectCommand { get; set; }
+        public CustomQuery.SelectQuery QuerySelectCommand { get; set; }
         [Browsable(false)]
-        public CustomQuery QueryInsertCommand { get; set; }
+        public CustomQuery.InsDelUpdQuery QueryInsertCommand { get; set; }
         [Browsable(false)]
-        public CustomQuery QueryUpdateCommand { get; set; }
+        public CustomQuery.InsDelUpdQuery QueryUpdateCommand { get; set; }
         [Browsable(false)]
-        public CustomQuery QueryDeleteCommand { get; set; }
+        public CustomQuery.InsDelUpdQuery QueryDeleteCommand { get; set; }
 
         private bool _readOnlyForeignKey;
+        private bool _hidePrimary;
 
         [Category("Custom Props")]
         public bool ReadOnlyForeignKey
@@ -87,13 +88,24 @@ namespace KuratorHelper_main
                     this.Columns[0].ReadOnly = value;
             }
         }
+        [Category("Custom Props")]
+        public bool HidePrimary
+        {
+            get => _hidePrimary;
+            set
+            {
+                _hidePrimary = value;
+                if (this.Columns.Count > 0)
+                    this.Columns[0].Visible = !value;
+            }
+        }
 
         public CustomGuna2DataGridView()
         {
-            QuerySelectCommand = new CustomQuery { TargetGrid = this };
-            QueryInsertCommand = new CustomQuery { TargetGrid = this };
-            QueryUpdateCommand = new CustomQuery { TargetGrid = this };
-            QueryDeleteCommand = new CustomQuery { TargetGrid = this };
+            QuerySelectCommand = new CustomQuery.SelectQuery { TargetGrid = this };
+            QueryInsertCommand = new CustomQuery.InsDelUpdQuery { TargetGrid = this };
+            QueryUpdateCommand = new CustomQuery.InsDelUpdQuery { TargetGrid = this };
+            QueryDeleteCommand = new CustomQuery.InsDelUpdQuery { TargetGrid = this };
         }
 
         public class CustomQuery
@@ -101,33 +113,65 @@ namespace KuratorHelper_main
             public string query { get; set; }
             public CustomGuna2DataGridView TargetGrid { get; set; }
 
-            public void ExecuteQuerry(string connectionstring = MainForm.connectionstring)
+            public class SelectQuery : CustomQuery
             {
-                if (string.IsNullOrWhiteSpace(query)) return;
-
-                DataTable dataTable = new DataTable();
-                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                public void ExecuteQuery(string connectionstring = MainForm.connectionstring)
                 {
-                    connection.Open();
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    if (string.IsNullOrWhiteSpace(query)) return;
+
+                    DataTable dataTable = new DataTable();
+                    using (MySqlConnection connection = new MySqlConnection(connectionstring))
                     {
-                        dataTable.Load(reader);
-                        reader.Close();
+                        connection.Open();
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            dataTable.Load(reader);
+                            reader.Close();
+                        }
+                    }
+
+                    foreach (DataColumn dc in dataTable.Columns)
+                    {
+                        if (VoidsMain.columnheadertexts.Keys.Contains(dc.ColumnName))
+                            dc.ColumnName = VoidsMain.columnheadertexts[dc.ColumnName];
+                    }
+
+                    TargetGrid.Columns.Clear();
+                    TargetGrid.DataSource = dataTable;
+                    
+
+                    if (TargetGrid.Columns.Count > 0)
+                    {
+                        TargetGrid.Columns[0].ReadOnly = TargetGrid.ReadOnlyForeignKey;
+                        TargetGrid.Columns[0].Visible = !TargetGrid.HidePrimary;
                     }
                 }
-
-                foreach (DataColumn dc in dataTable.Columns)
+            }
+            public class InsDelUpdQuery : CustomQuery
+            {
+                public void ExecuteQuery(string connectionstring = MainForm.connectionstring)
                 {
-                    if (VoidsMain.columnheadertexts.Keys.Contains(dc.ColumnName))
-                        dc.ColumnName = VoidsMain.columnheadertexts[dc.ColumnName];
+                    if (string.IsNullOrWhiteSpace(query)) return;
+
+                    DataTable dataTable = new DataTable();
+                    using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                    {
+                        connection.Open();
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            dataTable.Load(reader);
+                            reader.Close();
+                        }
+                    }
+
+                    foreach (DataColumn dc in dataTable.Columns)
+                    {
+                        if (VoidsMain.columnheadertexts.Keys.Contains(dc.ColumnName))
+                            dc.ColumnName = VoidsMain.columnheadertexts[dc.ColumnName];
+                    }
                 }
-
-                TargetGrid.Columns.Clear();
-                TargetGrid.DataSource = dataTable;
-
-                if (TargetGrid.Columns.Count > 0)
-                    TargetGrid.Columns[0].ReadOnly = TargetGrid.ReadOnlyForeignKey;
             }
         }
     }
