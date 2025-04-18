@@ -74,20 +74,10 @@ namespace KuratorHelper_main
         [Browsable(false)]
         public CustomQuery.InsDelUpdQuery QueryDeleteCommand { get; set; }
 
-        private bool _readOnlyForeignKey;
         private bool _hidePrimary;
+        private bool _readOnlyForeignKey;
+        private bool _autoIncrement;
 
-        [Category("Custom Props")]
-        public bool ReadOnlyForeignKey
-        {
-            get => _readOnlyForeignKey;
-            set
-            {
-                _readOnlyForeignKey = value;
-                if (this.Columns.Count > 0)
-                    this.Columns[0].ReadOnly = value;
-            }
-        }
         [Category("Custom Props")]
         public bool HidePrimary
         {
@@ -100,12 +90,53 @@ namespace KuratorHelper_main
             }
         }
 
+        [Category("Custom Props")]
+        public bool ReadOnlyForeignKey
+        {
+            get => _readOnlyForeignKey;
+            set
+            {
+                _readOnlyForeignKey = value;
+                if (this.Columns.Count > 0)
+                    this.Columns[1].ReadOnly = value;
+            }
+        }
+
+        [Category("Custom Props")]
+        public bool AutoIncrement
+        {
+            get => _autoIncrement;
+            set
+            {
+                _autoIncrement = value;
+            }
+        }
+
         public CustomGuna2DataGridView()
         {
             QuerySelectCommand = new CustomQuery.SelectQuery { TargetGrid = this };
             QueryInsertCommand = new CustomQuery.InsDelUpdQuery { TargetGrid = this };
             QueryUpdateCommand = new CustomQuery.InsDelUpdQuery { TargetGrid = this };
             QueryDeleteCommand = new CustomQuery.InsDelUpdQuery { TargetGrid = this };
+
+        }
+
+        public List<int> GetInsertableColumnIndices()
+        {
+            List<int> indices = new List<int>();
+
+            for (int i = 0; i < this.Columns.Count; i++)
+            {
+                var col = this.Columns[i];
+
+                // Пропускаем FK, если он ReadOnly, но только если это НЕ DateTime
+                if (i == 1 && this.ReadOnlyForeignKey && col.ValueType != typeof(DateTime))
+                    continue;
+
+                indices.Add(i);
+            }
+
+            return indices;
         }
 
         public class CustomQuery

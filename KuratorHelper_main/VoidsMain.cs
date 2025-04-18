@@ -36,7 +36,6 @@ namespace KuratorHelper_main
             { "restoration_date", "Дата зачисления" },
             { "restoration_order", "Приказ зачисления" },
 
-            { "address_id", "id_адреса" },
             { "city", "Город" },
             { "street", "Улица" },
             { "house", "Дом" },
@@ -51,7 +50,6 @@ namespace KuratorHelper_main
             { "specialty", "Специальность"},
             { "teacher", "Учитель"},
 
-            { "day_id", "id_дня"},
             { "lesson_number", "Номер пары"},
             { "subject_name", "Предмет"},
             { "week", "Неделя"},

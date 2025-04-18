@@ -476,36 +476,39 @@ namespace KuratorHelper_main
                 DataGridViewRow dgvr = kvp.Value;
 
                 // Устанавливаем значение первичного ключа как MAX + 1
-                dgvr.Cells[0].Value = ++maxId;
+                if (dgv.AutoIncrement)
+                    dgvr.Cells[0].Value = ++maxId;
 
-                // Экранируем значения и собираем строку для SQL
+                List<int> insertableIndices = dgv.GetInsertableColumnIndices();
+
                 string temp = string.Join(", ", dgvr.Cells.Cast<DataGridViewCell>()
-                .Where(cell => cell.ColumnIndex > 0)
-                .Select(cell =>
-                {
-                    object value = cell.Value;
+                    .Where(cell => insertableIndices.Contains(cell.ColumnIndex))
+                    .Select(cell =>
+                    {
+                        object value = cell.Value;
 
-                    if (value == null || value == DBNull.Value)
-                        return "NULL";
+                        if (value == null || value == DBNull.Value)
+                            return "NULL";
 
-                    if (value is DateTime dt)
-                        return $"'{dt:yyyy-MM-dd HH:mm:ss}'"; // Правильный формат для MySQL
+                        if (value is DateTime dt)
+                            return $"'{dt:yyyy-MM-dd HH:mm:ss}'";
 
-                    return $"'{MySqlHelper.EscapeString(value.ToString())}'";
-                }));
-                try
-                {
+                        return $"'{MySqlHelper.EscapeString(value.ToString())}'";
+                    }));
+                //try
+                //{
                     dgv.QueryInsert = string.Format(dgv.QueryInsert, temp, guna2ComboBox1.SelectedItem?.ToString() ?? "");
                     dgv.QueryInsertCommand.ExecuteQuery();
-                }
-                catch
-                {
-                    VoidsMain.MessageBoxCustomShow("Ошибка запроса", "Невозможно выполнить запрос. Возможно несоответствие первичных и внешних ключей!");
-                    return;
-                }
+                //}
+                //catch
+                //{
+                //    VoidsMain.MessageBoxCustomShow("Ошибка запроса", "Невозможно выполнить запрос. Возможно несоответствие первичных и внешних ключей!");
+                //    return;
+                //}
             }
 
             addingRowsDict.Clear();
+            guna2DataGridViewСтуденты_SelectionChanged(dgv, null);
             currentconfirmbutton.Enabled = false;
         }
 

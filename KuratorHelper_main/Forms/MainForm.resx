@@ -136,10 +136,6 @@
     <value>SELECT day_id, s.lesson_number, subject_name, CONCAT(t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') AS teacher, s.week, s.weekday FROM schedule s JOIN teachers t ON s.tutor_id = t.tutor_id WHERE s.group_name = '{0}' ORDER BY s.lesson_number, FIELD(s.weekday, 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ');
 </value>
   </data>
-  <data name="selectQuery1.query" xml:space="preserve">
-    <value>SELECT day_id, s.lesson_number, subject_name, CONCAT(t.last_name, ' ', LEFT(t.first_name, 1), '.', LEFT(t.middle_name, 1), '.') AS teacher, s.week, s.weekday FROM schedule s JOIN teachers t ON s.tutor_id = t.tutor_id WHERE s.group_name = '{0}' ORDER BY s.lesson_number, FIELD(s.weekday, 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ');
-</value>
-  </data>
   <metadata name="Column26.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -162,9 +158,6 @@
     <value>True</value>
   </metadata>
   <data name="guna2DataGridViewРасписание2.QuerySelect" xml:space="preserve">
-    <value>SELECT l.lesson_number AS '№', MAX(CASE WHEN s.weekday = 'ПН' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПН', MAX(CASE WHEN s.weekday = 'ВТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ВТ', MAX(CASE WHEN s.weekday = 'СР' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СР', MAX(CASE WHEN s.weekday = 'ЧТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ЧТ', MAX(CASE WHEN s.weekday = 'ПТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПТ', MAX(CASE WHEN s.weekday = 'СБ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СБ' FROM (SELECT 1 AS lesson_number UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6) AS l LEFT JOIN schedule s ON l.lesson_number = s.lesson_number AND s.week = 'Верхняя' AND s.group_name = '{0}' LEFT JOIN teachers t ON s.tutor_id = t.tutor_id GROUP BY l.lesson_number ORDER BY l.lesson_number;</value>
-  </data>
-  <data name="selectQuery2.query" xml:space="preserve">
     <value>SELECT l.lesson_number AS '№', MAX(CASE WHEN s.weekday = 'ПН' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПН', MAX(CASE WHEN s.weekday = 'ВТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ВТ', MAX(CASE WHEN s.weekday = 'СР' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СР', MAX(CASE WHEN s.weekday = 'ЧТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ЧТ', MAX(CASE WHEN s.weekday = 'ПТ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'ПТ', MAX(CASE WHEN s.weekday = 'СБ' THEN CONCAT(s.subject_name, '\n', t.last_name, ' ', LEFT(t.first_name,1), '.', LEFT(t.middle_name,1), '.') ELSE '' END) AS 'СБ' FROM (SELECT 1 AS lesson_number UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6) AS l LEFT JOIN schedule s ON l.lesson_number = s.lesson_number AND s.week = 'Верхняя' AND s.group_name = '{0}' LEFT JOIN teachers t ON s.tutor_id = t.tutor_id GROUP BY l.lesson_number ORDER BY l.lesson_number;</value>
   </data>
   <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -230,9 +223,6 @@
   <data name="guna2DataGridViewАдреса.QuerySelect" xml:space="preserve">
     <value>SELECT student_id, student_card, city, street, house, apartment FROM addresses a, students s WHERE (group_name = '{0}' AND s.registered_address_id = a.address_id) OR (group_name = '{0}' AND s.actual_address_id = a.address_id)</value>
   </data>
-  <data name="selectQuery5.query" xml:space="preserve">
-    <value>SELECT student_id, student_card, city, street, house, apartment FROM addresses a, students s WHERE (group_name = '{0}' AND s.registered_address_id = a.address_id) OR (group_name = '{0}' AND s.actual_address_id = a.address_id)</value>
-  </data>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -254,24 +244,12 @@
   <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="guna2DataGridViewСтуденты.QueryInsert" xml:space="preserve">
-    <value>INSERT INTO students (`student_card`, `last_name`, `first_name`, `middle_name`, `gender`, `birth_date`, `status`, `group_name`, `registered_address_id`, `actual_address_id`) VALUES ({0},'{1}', NULL, NULL);</value>
-  </data>
-  <data name="insDelUpdQuery17.query" xml:space="preserve">
-    <value>INSERT INTO students (`student_card`, `last_name`, `first_name`, `middle_name`, `gender`, `birth_date`, `status`, `group_name`, `registered_address_id`, `actual_address_id`) VALUES ({0},'{1}', NULL, NULL);</value>
-  </data>
   <metadata name="guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>71</value>
   </metadata>
-  <data name="guna2HtmlLabel33.Tag" xml:space="preserve">
-    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT registered_address_id FROM students WHERE student_card ='{0}');</value>
-  </data>
-  <data name="guna2HtmlLabel32.Tag" xml:space="preserve">
-    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT actual_address_id FROM students WHERE student_card ='{0}');</value>
-  </data>
   <data name="guna2HtmlLabel7.Tag" xml:space="preserve">
     <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT registered_address_id FROM students WHERE student_card ='{0}');</value>
   </data>
@@ -295,6 +273,12 @@
   </data>
   <data name="guna2HtmlLabel28.Tag" xml:space="preserve">
     <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT registered_address_id FROM students WHERE student_card ='{0}');</value>
+  </data>
+  <data name="guna2HtmlLabel33.Tag" xml:space="preserve">
+    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT registered_address_id FROM students WHERE student_card ='{0}');</value>
+  </data>
+  <data name="guna2HtmlLabel32.Tag" xml:space="preserve">
+    <value>SELECT CONCAT(city, ', ', street, ', ', house, IF(apartment IS NOT NULL, CONCAT(', ', apartment), '')) AS address FROM addresses WHERE address_id=(SELECT actual_address_id FROM students WHERE student_card ='{0}');</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="guna2TextBox1.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
