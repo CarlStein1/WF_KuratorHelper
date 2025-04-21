@@ -45,7 +45,7 @@ namespace KuratorHelper_main
             { "Дом", "house" },
             { "Квартира", "apartment" },
 
-            { "Серия", "passport_series" },
+            { "Серия паспорта", "passport_series" },
             { "Номер паспорта", "passport_number" },
             { "ИНН", "inn" },
             { "СНИЛС", "snils" },
@@ -151,7 +151,15 @@ namespace KuratorHelper_main
             {
                 connection.Open();
                 MySqlCommand command = new MySqlCommand(request, connection);
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBoxCustomShow("Ошибка!", "Не удалось провести операцию обработки данных. Проверьте их наличие или уникальность!");
+                }
+
             }
         }
 

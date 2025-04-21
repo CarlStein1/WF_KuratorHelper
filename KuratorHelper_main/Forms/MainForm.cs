@@ -24,7 +24,6 @@ namespace KuratorHelper_main
         // Временные строки, которые добавляются вручную и могут быть внесены в БД
         Dictionary<int, DataGridViewRow> addingRowsDict = new Dictionary<int, DataGridViewRow>();
         string lastcellvalue; // Хранит старое значение редактируемой ячейки
-        string primarykeyvalue; // Хранит значение первичного ключа редактируемой строки
         string currentgroup; // Текущая выбранная группа
         Guna2TileButton currentbutton; // Текущая активная кнопка (вкладка)
         Guna2TileButton currentconfirmbutton; // Кнопка "Подтвердить" для добавления строк
@@ -124,6 +123,10 @@ namespace KuratorHelper_main
         // Смена вкладки
         private void guna2TileButton3_Click_1(object sender, EventArgs e)
         {
+            if (addingRowsDict.Count > 0)
+                if (VoidsMain.MessageBoxCustomShow("Предупреждение", "В таблице остались несохраненные строки, которые вы можете потерять. Хотите продолжить?", true) == DialogResult.Cancel)
+                    return;
+            addingRowsDict.Clear();
             Guna2TileButton gtb = sender as Guna2TileButton;
             if (!gtb.Checked)
             {
@@ -133,8 +136,7 @@ namespace KuratorHelper_main
                 (currentbutton = gtb).Checked = true;
                 buttonsAndMainPanels[gtb].Visible = true;
             }
-
-            UpdateDGVFromDB(); // Обновляем данные при переключении вкладки
+            UpdateDGVFromDB(); // Обновляем данные
         }
 
         // Перемещение формы (захват за панель)
@@ -229,19 +231,31 @@ namespace KuratorHelper_main
 
                 if (addingRowsDict.Values.Contains(dgv.Rows[e.RowIndex])) return;
                 string changingcolumn = dgv.Columns[e.ColumnIndex].HeaderText;
-                var a = $"UPDATE {buttonsAndMainPanels[currentbutton].Tag} SET {VoidsMain.columnheadertexts[dgv.Columns[e.ColumnIndex].HeaderText]} = '{dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value}' WHERE {dgv.Columns[0].HeaderText} = '{dgv.Rows[e.RowIndex].Cells[0].Value}'";
-                VoidsMain.InsDelUpdRequest($"UPDATE {buttonsAndMainPanels[currentbutton].Tag} SET {VoidsMain.columnheadertexts[dgv.Columns[e.ColumnIndex].HeaderText]} = '{dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value}' WHERE {dgv.Columns[0].HeaderText} = '{dgv.Rows[e.RowIndex].Cells[0].Value}'");
-                if (addingRowsDict.Count <= 0)
-                    UpdateDGVFromDB();
+                try
+                {
+                    changingcolumn = VoidsMain.columnheadertexts[dgv.Columns[e.ColumnIndex].HeaderText];
+                }
+                catch { }
+                finally
+                {
+                    if (dgv.Columns[0].DataPropertyName == "AutoInc")
+                        VoidsMain.InsDelUpdRequest($"UPDATE {buttonsAndMainPanels[currentbutton].Tag} SET {changingcolumn} = '{dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value}' WHERE {dgv.Columns[0].HeaderText} = '{dgv.Rows[e.RowIndex].Cells[0].Value}'");
+                    else
+                        VoidsMain.InsDelUpdRequest($"UPDATE {buttonsAndMainPanels[currentbutton].Tag} SET {changingcolumn} = '{dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value}' WHERE {dgv.Columns[0].HeaderText} = '{lastcellvalue}'");
+                    if (addingRowsDict.Count <= 0)
+                        UpdateDGVFromDB();
+                }
             }
         }
 
         private void guna2DataGridViewСтуденты_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            if (e.ColumnIndex == 0)
-                primarykeyvalue = (sender as Guna2DataGridView).CurrentCell.Value.ToString();
             if (lastcellvalue != null)
+            {
+                if ((sender as Guna2DataGridView).CurrentCell.Value == null)
+                    (sender as Guna2DataGridView).CurrentCell.Value = "";
                 lastcellvalue = (sender as Guna2DataGridView).CurrentCell.Value.ToString();
+            }
         }
 
         private void guna2DataGridViewСтуденты_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -416,7 +430,7 @@ namespace KuratorHelper_main
                 }
                 catch
                 {
-                    VoidsMain.MessageBoxCustomShow("Ошибка запроса", "Не удалось вставить данные. Возможно несоответствие ключей или типов.");
+                    VoidsMain.MessageBoxCustomShow("Ошибка!", "Не удалось вставить данные. Проверьте правописание данных!");
                     return;
                 }
             }

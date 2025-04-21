@@ -61,6 +61,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Расписание1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column27 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Расписание2 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,20 +77,48 @@
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Академы = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Документы = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Адреса = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Студенты = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox4 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2TileButton19 = new Guna.UI2.WinForms.Guna2TileButton();
+            this.guna2TileButton18 = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2TileButtonВыход = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2TileButtonАкадемы = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2TileButtonАдреса = new Guna.UI2.WinForms.Guna2TileButton();
@@ -187,38 +222,6 @@
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column27 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -226,9 +229,6 @@
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column25 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.guna2TileButton18 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.guna2TileButton19 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Расписание1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Расписание2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Академы)).BeginInit();
@@ -236,6 +236,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Адреса)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Студенты)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanelСтуденты.SuspendLayout();
             this.guna2GradientPanelСтуденты.SuspendLayout();
@@ -262,7 +263,6 @@
             this.guna2GradientPanel19.SuspendLayout();
             this.guna2ContextMenuStrip4.SuspendLayout();
             this.guna2ContextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Расписание1
@@ -368,6 +368,78 @@
             this.Расписание1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellLeave);
             this.Расписание1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.guna2DataGridViewСтуденты_CellMouseClick);
             this.Расписание1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellValueChanged);
+            // 
+            // Column32
+            // 
+            this.Column32.DataPropertyName = "AutoInc";
+            this.Column32.FillWeight = 48.73846F;
+            this.Column32.HeaderText = "day_id";
+            this.Column32.Name = "Column32";
+            this.Column32.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 46F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Номер пары";
+            this.dataGridViewTextBoxColumn2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "SELECT * FROM subjects";
+            this.dataGridViewTextBoxColumn3.FillWeight = 105.3938F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Предмет";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "SELECT tutor_id, last_name, first_name, middle_name FROM teachers";
+            this.dataGridViewTextBoxColumn4.FillWeight = 94.85444F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Преподаватель";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // Column33
+            // 
+            this.Column33.HeaderText = "Группа";
+            this.Column33.Name = "Column33";
+            this.Column33.ReadOnly = true;
+            this.Column33.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.FillWeight = 65F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Неделя";
+            this.dataGridViewTextBoxColumn5.Items.AddRange(new object[] {
+            "Верхняя",
+            "Нижняя"});
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column27
+            // 
+            this.Column27.FillWeight = 43.84937F;
+            this.Column27.HeaderText = "День недели";
+            this.Column27.Items.AddRange(new object[] {
+            "ПН",
+            "ВТ",
+            "СР",
+            "ЧТ",
+            "ПТ",
+            "СБ"});
+            this.Column27.Name = "Column27";
+            this.Column27.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column27.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Расписание2
             // 
@@ -614,6 +686,64 @@
             this.Академы.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellValueChanged);
             this.Академы.SelectionChanged += new System.EventHandler(this.guna2DataGridViewСтуденты_SelectionChanged);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "SELECT `student_id`, `student_card`, `last_name`, `first_name`, `middle_name`, `g" +
+    "ender`, `birth_date`, `status`, `registered_address_id`, `actual_address_id` FRO" +
+    "M `students` WHERE group_name = \'{0}\'";
+            this.dataGridViewTextBoxColumn1.HeaderText = "student_id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "0";
+            this.dataGridViewTextBoxColumn7.FillWeight = 71.06599F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Зачетка";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.FillWeight = 104.8223F;
+            this.Column9.HeaderText = "Группа отчисления";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "Date";
+            this.Column10.FillWeight = 104.8223F;
+            this.Column10.HeaderText = "Дата отчисления";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.FillWeight = 104.8223F;
+            this.Column11.HeaderText = "Приказ отчисления";
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "SELECT * FROM groups";
+            this.Column12.FillWeight = 104.8223F;
+            this.Column12.HeaderText = "Группа зачисления";
+            this.Column12.Name = "Column12";
+            // 
+            // Column13
+            // 
+            this.Column13.DataPropertyName = "Date";
+            this.Column13.FillWeight = 104.8223F;
+            this.Column13.HeaderText = "Дата зачисления";
+            this.Column13.Name = "Column13";
+            // 
+            // Column14
+            // 
+            this.Column14.FillWeight = 104.8223F;
+            this.Column14.HeaderText = "Приказ зачисления";
+            this.Column14.Name = "Column14";
+            // 
             // Документы
             // 
             this.Документы.AccessibleDescription = "groupneed";
@@ -817,6 +947,40 @@
             this.Адреса.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellValueChanged);
             this.Адреса.SelectionChanged += new System.EventHandler(this.guna2DataGridViewСтуденты_SelectionChanged);
             // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "AutoInc";
+            this.dataGridViewTextBoxColumn8.HeaderText = "address_id";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // Column28
+            // 
+            this.Column28.DataPropertyName = "0";
+            this.Column28.HeaderText = "Зачетка";
+            this.Column28.Name = "Column28";
+            this.Column28.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Город";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Улица";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "Дом";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.HeaderText = "Квартира";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
             // Студенты
             // 
             this.Студенты.AccessibleDescription = "groupneed";
@@ -922,6 +1086,90 @@
             this.Студенты.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.guna2DataGridViewСтуденты_CellMouseClick);
             this.Студенты.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellValueChanged);
             this.Студенты.SelectionChanged += new System.EventHandler(this.guna2DataGridViewСтуденты_SelectionChanged);
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "AutoInc";
+            this.Column8.HeaderText = "student_id";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 96.8818F;
+            this.Column1.HeaderText = "Зачетка";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 96.8818F;
+            this.Column2.HeaderText = "Фамилия";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 96.8818F;
+            this.Column3.HeaderText = "Имя";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 96.8818F;
+            this.Column4.HeaderText = "Отчество";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 45F;
+            this.Column5.HeaderText = "Пол";
+            this.Column5.Items.AddRange(new object[] {
+            "М",
+            "Ж"});
+            this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Date";
+            this.Column6.FillWeight = 121.8274F;
+            this.Column6.HeaderText = "Дата рождения";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 96.8818F;
+            this.Column7.HeaderText = "Статус";
+            this.Column7.Items.AddRange(new object[] {
+            "Староста",
+            "Студент",
+            "СтудСовет",
+            "Академ"});
+            this.Column7.Name = "Column7";
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column29
+            // 
+            this.Column29.HeaderText = "Группа";
+            this.Column29.Name = "Column29";
+            this.Column29.ReadOnly = true;
+            this.Column29.Visible = false;
+            // 
+            // Column30
+            // 
+            this.Column30.DataPropertyName = "SELECT * FROM addresses";
+            this.Column30.HeaderText = "Адрес прописки";
+            this.Column30.Name = "Column30";
+            this.Column30.ReadOnly = true;
+            // 
+            // Column31
+            // 
+            this.Column31.DataPropertyName = "SELECT * FROM addresses";
+            this.Column31.HeaderText = "Адрес проживания";
+            this.Column31.Name = "Column31";
+            this.Column31.ReadOnly = true;
             // 
             // guna2BorderlessForm1
             // 
@@ -1036,6 +1284,20 @@
             this.guna2TextBox1.TabIndex = 29;
             this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::KuratorHelper_main.Properties.Resources.icon_keup;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.guna2GradientPanel1_MouseMove);
+            // 
             // guna2ControlBox1
             // 
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1122,6 +1384,64 @@
             this.guna2GradientPanel2.Size = new System.Drawing.Size(60, 840);
             this.guna2GradientPanel2.TabIndex = 8;
             this.guna2GradientPanel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.guna2GradientPanel1_MouseMove);
+            // 
+            // guna2TileButton19
+            // 
+            this.guna2TileButton19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2TileButton19.Animated = true;
+            this.guna2TileButton19.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TileButton19.BorderRadius = 20;
+            this.guna2TileButton19.CustomImages.HoveredImage = global::KuratorHelper_main.Properties.Resources.utility_hover_word;
+            this.guna2TileButton19.CustomImages.Image = global::KuratorHelper_main.Properties.Resources.utility_word;
+            this.guna2TileButton19.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.guna2TileButton19.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2TileButton19.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton19.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton19.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2TileButton19.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2TileButton19.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
+            this.guna2TileButton19.Font = new System.Drawing.Font("Candara Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guna2TileButton19.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2TileButton19.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(127)))));
+            this.guna2TileButton19.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2TileButton19.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2TileButton19.Location = new System.Drawing.Point(5, 630);
+            this.guna2TileButton19.Margin = new System.Windows.Forms.Padding(15, 20, 15, 0);
+            this.guna2TileButton19.Name = "guna2TileButton19";
+            this.guna2TileButton19.Size = new System.Drawing.Size(50, 50);
+            this.guna2TileButton19.TabIndex = 29;
+            this.guna2TileButton19.Tag = "";
+            this.guna2TileButton19.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton19.Click += new System.EventHandler(this.guna2TileButton19_Click);
+            // 
+            // guna2TileButton18
+            // 
+            this.guna2TileButton18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2TileButton18.Animated = true;
+            this.guna2TileButton18.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TileButton18.BorderRadius = 20;
+            this.guna2TileButton18.CustomImages.HoveredImage = global::KuratorHelper_main.Properties.Resources.utility_hover_excel;
+            this.guna2TileButton18.CustomImages.Image = global::KuratorHelper_main.Properties.Resources.utility_excel;
+            this.guna2TileButton18.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.guna2TileButton18.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2TileButton18.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton18.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton18.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2TileButton18.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2TileButton18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
+            this.guna2TileButton18.Font = new System.Drawing.Font("Candara Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guna2TileButton18.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2TileButton18.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(127)))));
+            this.guna2TileButton18.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2TileButton18.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2TileButton18.Location = new System.Drawing.Point(5, 700);
+            this.guna2TileButton18.Margin = new System.Windows.Forms.Padding(15, 20, 15, 0);
+            this.guna2TileButton18.Name = "guna2TileButton18";
+            this.guna2TileButton18.Size = new System.Drawing.Size(50, 50);
+            this.guna2TileButton18.TabIndex = 28;
+            this.guna2TileButton18.Tag = "";
+            this.guna2TileButton18.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton18.Click += new System.EventHandler(this.guna2TileButton18_Click);
             // 
             // guna2TileButtonВыход
             // 
@@ -3089,254 +3409,6 @@
             this.guna2Elipse2.BorderRadius = 15;
             this.guna2Elipse2.TargetControl = this.Академы;
             // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "AutoInc";
-            this.Column8.HeaderText = "student_id";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 96.8818F;
-            this.Column1.HeaderText = "Зачетка";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 96.8818F;
-            this.Column2.HeaderText = "Фамилия";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 96.8818F;
-            this.Column3.HeaderText = "Имя";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 96.8818F;
-            this.Column4.HeaderText = "Отчество";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 45F;
-            this.Column5.HeaderText = "Пол";
-            this.Column5.Items.AddRange(new object[] {
-            "М",
-            "Ж"});
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Date";
-            this.Column6.FillWeight = 121.8274F;
-            this.Column6.HeaderText = "Дата рождения";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 96.8818F;
-            this.Column7.HeaderText = "Статус";
-            this.Column7.Items.AddRange(new object[] {
-            "Староста",
-            "Студент",
-            "СтудСовет",
-            "Академ"});
-            this.Column7.Name = "Column7";
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column29
-            // 
-            this.Column29.HeaderText = "Группа";
-            this.Column29.Name = "Column29";
-            this.Column29.ReadOnly = true;
-            this.Column29.Visible = false;
-            // 
-            // Column30
-            // 
-            this.Column30.DataPropertyName = "SELECT * FROM addresses";
-            this.Column30.HeaderText = "Адрес прописки";
-            this.Column30.Name = "Column30";
-            this.Column30.ReadOnly = true;
-            // 
-            // Column31
-            // 
-            this.Column31.DataPropertyName = "SELECT * FROM addresses";
-            this.Column31.HeaderText = "Адрес проживания";
-            this.Column31.Name = "Column31";
-            this.Column31.ReadOnly = true;
-            // 
-            // Column32
-            // 
-            this.Column32.DataPropertyName = "AutoInc";
-            this.Column32.FillWeight = 48.73846F;
-            this.Column32.HeaderText = "day_id";
-            this.Column32.Name = "Column32";
-            this.Column32.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 46F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Номер пары";
-            this.dataGridViewTextBoxColumn2.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "SELECT * FROM subjects";
-            this.dataGridViewTextBoxColumn3.FillWeight = 105.3938F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Предмет";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "SELECT tutor_id, last_name, first_name, middle_name FROM teachers";
-            this.dataGridViewTextBoxColumn4.FillWeight = 94.85444F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Преподаватель";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // Column33
-            // 
-            this.Column33.HeaderText = "Группа";
-            this.Column33.Name = "Column33";
-            this.Column33.ReadOnly = true;
-            this.Column33.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.FillWeight = 65F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Неделя";
-            this.dataGridViewTextBoxColumn5.Items.AddRange(new object[] {
-            "Верхняя",
-            "Нижняя"});
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column27
-            // 
-            this.Column27.FillWeight = 43.84937F;
-            this.Column27.HeaderText = "День недели";
-            this.Column27.Items.AddRange(new object[] {
-            "ПН",
-            "ВТ",
-            "СР",
-            "ЧТ",
-            "ПТ",
-            "СБ"});
-            this.Column27.Name = "Column27";
-            this.Column27.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column27.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "AutoInc";
-            this.dataGridViewTextBoxColumn8.HeaderText = "address_id";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // Column28
-            // 
-            this.Column28.DataPropertyName = "0";
-            this.Column28.HeaderText = "Зачетка";
-            this.Column28.Name = "Column28";
-            this.Column28.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Город";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "Улица";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.HeaderText = "Дом";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "Квартира";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "SELECT `student_id`, `student_card`, `last_name`, `first_name`, `middle_name`, `g" +
-    "ender`, `birth_date`, `status`, `registered_address_id`, `actual_address_id` FRO" +
-    "M `students` WHERE group_name = \'{0}\'";
-            this.dataGridViewTextBoxColumn1.HeaderText = "student_id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "0";
-            this.dataGridViewTextBoxColumn7.FillWeight = 71.06599F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Зачетка";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.FillWeight = 104.8223F;
-            this.Column9.HeaderText = "Группа отчисления";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Visible = false;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "Date";
-            this.Column10.FillWeight = 104.8223F;
-            this.Column10.HeaderText = "Дата отчисления";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.FillWeight = 104.8223F;
-            this.Column11.HeaderText = "Приказ отчисления";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "SELECT * FROM groups";
-            this.Column12.FillWeight = 104.8223F;
-            this.Column12.HeaderText = "Группа зачисления";
-            this.Column12.Name = "Column12";
-            // 
-            // Column13
-            // 
-            this.Column13.DataPropertyName = "Date";
-            this.Column13.FillWeight = 104.8223F;
-            this.Column13.HeaderText = "Дата зачисления";
-            this.Column13.Name = "Column13";
-            // 
-            // Column14
-            // 
-            this.Column14.FillWeight = 104.8223F;
-            this.Column14.HeaderText = "Приказ зачисления";
-            this.Column14.Name = "Column14";
-            // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "SELECT `student_id`, `student_card`, `last_name`, `first_name`, `middle_name`, `g" +
@@ -3356,12 +3428,12 @@
             // 
             // Column21
             // 
-            this.Column21.HeaderText = "СерияПаспорта";
+            this.Column21.HeaderText = "Серия паспорта";
             this.Column21.Name = "Column21";
             // 
             // Column22
             // 
-            this.Column22.HeaderText = "НомерПаспорта";
+            this.Column22.HeaderText = "Номер паспорта";
             this.Column22.Name = "Column22";
             // 
             // Column23
@@ -3386,78 +3458,6 @@
             this.Column25.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // guna2TileButton18
-            // 
-            this.guna2TileButton18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2TileButton18.Animated = true;
-            this.guna2TileButton18.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TileButton18.BorderRadius = 20;
-            this.guna2TileButton18.CustomImages.HoveredImage = global::KuratorHelper_main.Properties.Resources.utility_hover_excel;
-            this.guna2TileButton18.CustomImages.Image = global::KuratorHelper_main.Properties.Resources.utility_excel;
-            this.guna2TileButton18.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.guna2TileButton18.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2TileButton18.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton18.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton18.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2TileButton18.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
-            this.guna2TileButton18.Font = new System.Drawing.Font("Candara Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.guna2TileButton18.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2TileButton18.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(127)))));
-            this.guna2TileButton18.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2TileButton18.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2TileButton18.Location = new System.Drawing.Point(5, 700);
-            this.guna2TileButton18.Margin = new System.Windows.Forms.Padding(15, 20, 15, 0);
-            this.guna2TileButton18.Name = "guna2TileButton18";
-            this.guna2TileButton18.Size = new System.Drawing.Size(50, 50);
-            this.guna2TileButton18.TabIndex = 28;
-            this.guna2TileButton18.Tag = "";
-            this.guna2TileButton18.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2TileButton18.Click += new System.EventHandler(this.guna2TileButton18_Click);
-            // 
-            // guna2TileButton19
-            // 
-            this.guna2TileButton19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2TileButton19.Animated = true;
-            this.guna2TileButton19.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TileButton19.BorderRadius = 20;
-            this.guna2TileButton19.CustomImages.HoveredImage = global::KuratorHelper_main.Properties.Resources.utility_hover_word;
-            this.guna2TileButton19.CustomImages.Image = global::KuratorHelper_main.Properties.Resources.utility_word;
-            this.guna2TileButton19.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.guna2TileButton19.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2TileButton19.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton19.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton19.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2TileButton19.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton19.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
-            this.guna2TileButton19.Font = new System.Drawing.Font("Candara Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.guna2TileButton19.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2TileButton19.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(127)))));
-            this.guna2TileButton19.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2TileButton19.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2TileButton19.Location = new System.Drawing.Point(5, 630);
-            this.guna2TileButton19.Margin = new System.Windows.Forms.Padding(15, 20, 15, 0);
-            this.guna2TileButton19.Name = "guna2TileButton19";
-            this.guna2TileButton19.Size = new System.Drawing.Size(50, 50);
-            this.guna2TileButton19.TabIndex = 29;
-            this.guna2TileButton19.Tag = "";
-            this.guna2TileButton19.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2TileButton19.Click += new System.EventHandler(this.guna2TileButton19_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::KuratorHelper_main.Properties.Resources.icon_keup;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.guna2GradientPanel1_MouseMove);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3479,6 +3479,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Адреса)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Студенты)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2CustomGradientPanelСтуденты.ResumeLayout(false);
             this.guna2GradientPanelСтуденты.ResumeLayout(false);
@@ -3509,7 +3510,6 @@
             this.guna2GradientPanel19.ResumeLayout(false);
             this.guna2ContextMenuStrip4.ResumeLayout(false);
             this.guna2ContextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3676,6 +3676,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private Guna.UI2.WinForms.Guna2TileButton guna2TileButton18;
+        private Guna.UI2.WinForms.Guna2TileButton guna2TileButton19;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
@@ -3683,8 +3685,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column25;
-        private Guna.UI2.WinForms.Guna2TileButton guna2TileButton18;
-        private Guna.UI2.WinForms.Guna2TileButton guna2TileButton19;
     }
 }
 
