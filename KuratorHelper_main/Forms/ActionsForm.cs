@@ -42,5 +42,29 @@ namespace KuratorHelper_main
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            Guna2DataGridView dgv = guna2DataGridView1;
+            Guna2TextBox txb = sender as Guna2TextBox;
+
+            if (dgv.DataSource is DataTable table)
+            {
+                string filterExpression = string.Empty;
+
+                // Фильтрация по всем столбцам
+                if (!string.IsNullOrEmpty(txb.Text))
+                {
+                    foreach (DataColumn col in table.Columns)
+                    {
+                        filterExpression += $"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{txb.Text}%' OR ";
+                    }
+                    filterExpression = filterExpression.TrimEnd(" OR ".ToCharArray());
+                }
+
+                // Применяем фильтр
+                (table.DefaultView).RowFilter = filterExpression;
+            }
+        }
     }
 }

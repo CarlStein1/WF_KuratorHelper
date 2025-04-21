@@ -86,6 +86,13 @@
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Документы = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column25 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Адреса = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -222,13 +229,6 @@
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column25 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Расписание1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Расписание2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Академы)).BeginInit();
@@ -845,6 +845,55 @@
             this.Документы.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.guna2DataGridViewСтуденты_CellMouseClick);
             this.Документы.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridViewСтуденты_CellValueChanged);
             this.Документы.SelectionChanged += new System.EventHandler(this.guna2DataGridViewСтуденты_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "SELECT `student_id`, `student_card`, `last_name`, `first_name`, `middle_name`, `g" +
+    "ender`, `birth_date`, `status`, `registered_address_id`, `actual_address_id` FRO" +
+    "M `students` WHERE group_name = \'{0}\'";
+            this.dataGridViewTextBoxColumn6.HeaderText = "student_id";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "0";
+            this.dataGridViewTextBoxColumn12.FillWeight = 71.06599F;
+            this.dataGridViewTextBoxColumn12.HeaderText = "Зачетка";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "Серия паспорта";
+            this.Column21.Name = "Column21";
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "Номер паспорта";
+            this.Column22.Name = "Column22";
+            // 
+            // Column23
+            // 
+            this.Column23.HeaderText = "ИНН";
+            this.Column23.Name = "Column23";
+            // 
+            // Column24
+            // 
+            this.Column24.HeaderText = "СНИЛС";
+            this.Column24.Name = "Column24";
+            // 
+            // Column25
+            // 
+            this.Column25.HeaderText = "Воинский учет";
+            this.Column25.Items.AddRange(new object[] {
+            "Отсрочка",
+            "Приписной",
+            "Военный билет",
+            "Без воен. билета"});
+            this.Column25.Name = "Column25";
+            this.Column25.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Адреса
             // 
@@ -3409,55 +3458,6 @@
             this.guna2Elipse2.BorderRadius = 15;
             this.guna2Elipse2.TargetControl = this.Академы;
             // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "SELECT `student_id`, `student_card`, `last_name`, `first_name`, `middle_name`, `g" +
-    "ender`, `birth_date`, `status`, `registered_address_id`, `actual_address_id` FRO" +
-    "M `students` WHERE group_name = \'{0}\'";
-            this.dataGridViewTextBoxColumn6.HeaderText = "student_id";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "0";
-            this.dataGridViewTextBoxColumn12.FillWeight = 71.06599F;
-            this.dataGridViewTextBoxColumn12.HeaderText = "Зачетка";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "Серия паспорта";
-            this.Column21.Name = "Column21";
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "Номер паспорта";
-            this.Column22.Name = "Column22";
-            // 
-            // Column23
-            // 
-            this.Column23.HeaderText = "ИНН";
-            this.Column23.Name = "Column23";
-            // 
-            // Column24
-            // 
-            this.Column24.HeaderText = "СНИЛС";
-            this.Column24.Name = "Column24";
-            // 
-            // Column25
-            // 
-            this.Column25.HeaderText = "Воинский учет";
-            this.Column25.Items.AddRange(new object[] {
-            "Отсрочка",
-            "Приписной",
-            "Военный билет",
-            "Без воен. билета"});
-            this.Column25.Name = "Column25";
-            this.Column25.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3468,6 +3468,7 @@
             this.Controls.Add(this.guna2GradientPanel2);
             this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Помощник Куратора";
