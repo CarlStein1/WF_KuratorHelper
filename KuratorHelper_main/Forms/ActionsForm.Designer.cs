@@ -116,6 +116,7 @@
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(131)))), ((int)(((byte)(182)))));
             this.guna2TextBox1.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
             this.guna2TextBox1.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(183)))));
+            this.guna2TextBox1.IconLeft = global::KuratorHelper_main.Properties.Resources.search;
             this.guna2TextBox1.Location = new System.Drawing.Point(1049, 15);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(0, 15, 30, 15);
             this.guna2TextBox1.Name = "guna2TextBox1";

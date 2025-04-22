@@ -151,14 +151,15 @@ namespace KuratorHelper_main
             {
                 connection.Open();
                 MySqlCommand command = new MySqlCommand(request, connection);
-                try
-                {
+                //try
+                //{
                     command.ExecuteNonQuery();
-                }
-                catch
-                {
-                    MessageBoxCustomShow("Ошибка!", "Не удалось провести операцию обработки данных. Проверьте их наличие или уникальность!");
-                }
+                //}
+                //catch
+                //{
+                //    MessageBoxCustomShow("Ошибка!", "Не удалось провести операцию обработки данных. Проверьте их наличие или уникальность!");
+                    
+                //}
 
             }
         }

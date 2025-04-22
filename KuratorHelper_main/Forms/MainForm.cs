@@ -198,23 +198,34 @@ namespace KuratorHelper_main
             Guna2DataGridView dgv = buttonsAndDGV[currentbutton][0];
             Guna2TextBox txb = sender as Guna2TextBox;
 
-            if (dgv.DataSource is DataTable table)
-            {
-                string filterExpression = string.Empty;
+            string searchText = txb.Text.ToLower();
 
-                // Фильтрация по всем столбцам
-                if (!string.IsNullOrEmpty(txb.Text))
+            dgv.SuspendLayout(); // ускоряем отрисовку при большом количестве строк
+
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                // Не трогаем временные строки
+                if (row.Tag != null && row.Tag.ToString() == "temp")
                 {
-                    foreach (DataColumn col in table.Columns)
-                    {
-                        filterExpression += $"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{txb.Text}%' OR ";
-                    }
-                    filterExpression = filterExpression.TrimEnd(" OR ".ToCharArray());
+                    row.Visible = true;
+                    continue;
                 }
 
-                // Применяем фильтр
-                (table.DefaultView).RowFilter = filterExpression;
+                bool visible = false;
+
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(searchText))
+                    {
+                        visible = true;
+                        break;
+                    }
+                }
+
+                row.Visible = visible;
             }
+
+            dgv.ResumeLayout();
         }
 
 
@@ -231,12 +242,9 @@ namespace KuratorHelper_main
 
                 if (addingRowsDict.Values.Contains(dgv.Rows[e.RowIndex])) return;
                 string changingcolumn = dgv.Columns[e.ColumnIndex].HeaderText;
-                try
-                {
+                if (VoidsMain.columnheadertexts.ContainsKey(dgv.Columns[e.ColumnIndex].HeaderText))
                     changingcolumn = VoidsMain.columnheadertexts[dgv.Columns[e.ColumnIndex].HeaderText];
-                }
-                catch { }
-                finally
+                try
                 {
                     if (dgv.Columns[0].DataPropertyName == "AutoInc")
                         VoidsMain.InsDelUpdRequest($"UPDATE {buttonsAndMainPanels[currentbutton].Tag} SET {changingcolumn} = '{dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value}' WHERE {dgv.Columns[0].HeaderText} = '{dgv.Rows[e.RowIndex].Cells[0].Value}'");
@@ -245,6 +253,13 @@ namespace KuratorHelper_main
                     if (addingRowsDict.Count <= 0)
                         UpdateDGVFromDB();
                 }
+                catch
+                {
+                    VoidsMain.MessageBoxCustomShow("Ошибка!", "Не удалось вставить данные. Проверьте правописание данных!");
+                    dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = lastcellvalue;
+                    return;
+                }
+                    
             }
         }
 
@@ -280,6 +295,7 @@ namespace KuratorHelper_main
 
             dgv.Rows.Add();
             int rowIndex = dgv.Rows.Count - 1;
+            dgv.Rows[rowIndex].Tag = "temp";
             DataGridViewRow newRow = dgv.Rows[rowIndex];
             addingRowsDict[rowIndex] = newRow;
 
@@ -437,7 +453,7 @@ namespace KuratorHelper_main
 
             // Завершающие действия
             addingRowsDict.Clear();
-            guna2DataGridViewСтуденты_SelectionChanged(dgv, null);
+            UpdateDGVFromDB();
             currentconfirmbutton.Enabled = false;
             foreach (DataGridViewColumn clmn in dgv.Columns)
             {
@@ -506,7 +522,7 @@ namespace KuratorHelper_main
 
         private void guna2DataGridViewСтуденты_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (!monthCalendar1.Visible && !monthCalendar1.Focused)
+            if (monthCalendar1.Visible && !monthCalendar1.Focused)
             {
                 monthCalendar1.Hide();
                 currentcell = null;

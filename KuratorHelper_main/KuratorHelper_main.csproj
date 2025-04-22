@@ -256,5 +256,8 @@
   <ItemGroup>
     <None Include="Resources\utility_hover_txt.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
