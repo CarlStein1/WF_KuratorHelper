@@ -24,6 +24,7 @@ namespace KuratorHelper_main
 
         private void ActionsForm_Load(object sender, EventArgs e)
         {
+            if (addition == null) addition = new object[0];
             guna2DataGridView1.DataSource = VoidsMain.SelectRequestAsDataTable(string.Format(query,addition));
             foreach (DataGridViewColumn dgvc in guna2DataGridView1.Columns)
                 if (VoidsMain.columnheadertexts.Values.Contains(dgvc.HeaderText))
